@@ -39,6 +39,9 @@ table {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.hide{
+  display:none;
+}
 
 /* Todo lo relacionado a la barra superior */
 
@@ -150,6 +153,22 @@ table {
   width:4px;
   background:#29abe2;
 }
+.contact .contactStatus{
+  border:solid 2px #FFF;
+  position:absolute;
+  top:2px;
+  left:43px;
+  box-shadow:0px 0px 2px 0px #CCC;
+  border-radius:10px;
+  height:10px;
+  width:10px;
+}
+.contact .contactStatus.ON{
+  background:#7ac943;
+}
+.contact .contactStatus.OFF{
+  background:#666;
+}
 .contact .contactImage{
   position:relative;
   display:inline-block;
@@ -189,7 +208,7 @@ table {
   line-height: 20px;
   border-radius:5px;
   font-weight: bold;
-  background:#39b54a;
+  background:#29abe2;
   position:relative;
   display:inline-block;
   float:right;

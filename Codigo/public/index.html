@@ -73,6 +73,7 @@
     </table>
     <!-- Left Bar -->
     <div class="chatWindow">
+
       <div class="searchMessages">
         <td><input type="text" placeholder="Buscar"></td>
       </div>
@@ -81,6 +82,7 @@
         <div class="contact unsel">
           <div class="selectionLine" style="display:none"></div>
           <img class="contactImage" src="img/menu/nacho.png">
+          <div class="contactStatus ON"></div>
           <div class="text">
             <div class="contactName">Ignacio Samur</div>
             <div class="lastMessage truncate">Hola loco, como estas? Tanto tiempo no?</div>
@@ -91,6 +93,7 @@
         <div class="contact unsel" onclick="chat.open()">
           <div class="selectionLine"></div>
           <img class="contactImage" src="img/menu/elliot.png">
+          <div class="contactStatus ON"></div>
           <div class="text">
             <div class="contactName">Elliot Alderson</div>
             <div class="lastMessage truncate">I am ready to launch the hack!</div>
@@ -101,16 +104,18 @@
         <div class="contact unsel">
           <div class="selectionLine" style="display:none"></div>
           <img class="contactImage" src="img/menu/matu.jpg">
+          <div class="contactStatus OFF"></div>
           <div class="text">
             <div class="contactName">Jorge Maturana</div>
             <div class="lastMessage truncate">Te gusta la idea?</div>
           </div>
-          <div class="counter" style="background:#888">1</div>
+          <div class="counter">1</div>
         </div>
 
         <div class="contact unsel">
           <div class="selectionLine" style="display:none"></div>
           <img class="contactImage" src="img/menu/mark.jpeg">
+          <div class="contactStatus ON"></div>
           <div class="text">
             <div class="contactName">Mark Zuckerberg</div>
             <div class="lastMessage truncate">Nice site dude!</div>
@@ -121,31 +126,34 @@
         <div class="contact unsel">
           <div class="selectionLine" style="display:none"></div>
           <img class="contactImage" src="img/menu/jobs.png">
+          <div class="contactStatus OFF"></div>
           <div class="text">
             <div class="contactName">Steve Jobs</div>
             <div class="lastMessage truncate">You touched my heart...</div>
           </div>
-          <div class="counter"></div>
+          <div class="counter" style="display:none"></div>
         </div>
 
         <div class="contact unsel">
           <div class="selectionLine" style="display:none"></div>
           <img class="contactImage" src="img/menu/user.png">
+          <div class="contactStatus ON"></div>
           <div class="text">
             <div class="contactName">Niño de Relleno</div>
             <div class="lastMessage truncate">Hola jaja</div>
           </div>
-          <div class="counter" style="background:#888"></div>
+          <div class="counter" style="display:none"></div>
         </div>
 
         <div class="contact unsel">
           <div class="selectionLine" style="display:none"></div>
           <img class="contactImage" src="img/menu/user.png">
+          <div class="contactStatus ON"></div>
           <div class="text">
             <div class="contactName">Otro Usuario</div>
             <div class="lastMessage truncate">Que fome mi nombre.</div>
           </div>
-          <div class="counter"></div>
+          <div class="counter" style="display:none"></div>
         </div>
 
       </div>
