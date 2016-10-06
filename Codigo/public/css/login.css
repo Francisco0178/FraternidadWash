@@ -20,18 +20,27 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    /*border: 0px solid #000000;*/
 }
+
 
 /* estilo para el boton de ingreso */
 
 button {
-    background-color: #4CAF50;
+    background-color: blue;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
     /*width: 10%;
     position:absolute;
     top: 100%;
@@ -55,7 +64,7 @@ button {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: red;
 }
 
 /* Center the avatar image inside this container */
@@ -81,6 +90,14 @@ span.psw {
     padding-top: 16px;
 }
 
+span.psw a{
+    color: lightblue;
+}
+
+span.psw a:hover{
+    color: red;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
@@ -102,7 +119,7 @@ span.psw {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
     padding-top: 60px;
 }
 
@@ -110,11 +127,16 @@ b{
     font-family: monotype corsiva;
     font-weight: bold;
     font-size: 150%;
+    color:white;
+}
+
+strong{
+    color:white;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: rgba(0,0,0,0.3);
     margin: 5px auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 30%; /* Could be more or less, depending on screen size */
