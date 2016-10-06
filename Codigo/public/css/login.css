@@ -1,3 +1,12 @@
+body{
+    background: url(../img/login/alamedauno.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x:hidden; 
+}
+
  /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
@@ -30,16 +39,16 @@ button {
 }
 
 #btn_ingreso{
-    background-color: #FFFFFF;
-    color: blue;
+    color: lightblue;
     padding: 14px 20px;
     margin: 0px 0;
-    border: none;
-    cursor: pointer;
-    width: 9%;
     position:relative;
     top: 100%;
     left: 100%;
+}
+
+#btn_ingreso:hover {
+    color: red;
 }
 
 /* Extra style for the cancel button (red) */
@@ -91,10 +100,16 @@ span.psw {
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    /*overflow: auto; /* Enable scroll if needed */
+    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
+}
+
+b{
+    font-family: monotype corsiva;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 /* Modal Content/Box */
@@ -102,7 +117,7 @@ span.psw {
     background-color: #fefefe;
     margin: 5px auto; /* 15% from the top and centered */
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 30%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -126,7 +141,18 @@ span.psw {
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+    animation: animatezoom 0.6s;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border: 0px solid #000000;
+}
+
+.container{
+    border-radius: 0px 0px 15px 15px;
+    -moz-border-radius: 0px 0px 15px 15px;
+    -webkit-border-radius: 0px 0px 15px 15px;
+    border: 0px solid #000000;
 }
 
 @-webkit-keyframes animatezoom {

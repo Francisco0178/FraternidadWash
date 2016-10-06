@@ -7,17 +7,17 @@
 	</head>
 	<body>
 		 <!-- Button to open the modal login form -->
-		<button id="btn_ingreso" onclick="modal.style.display='block'">Registrarse</button>
+		<a href="#" id="btn_ingreso" onclick="modal.style.display='block'">Registrarse</a>
 
 		<!-- The Modal -->
 		<div id="id01" class="modal">
-		  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		  <!--<span onclick="modal.style.display='none'" class="close" title="Cerrar Modal">&times;</span>-->
 
 		  <!-- Modal Content -->
 		  <form class="modal-content animate" action="index.html">
-		    <div class="imgcontainer">
+		    <!--<div class="imgcontainer">
 		      <img src="img/login/usuario-corporativo.png" alt="Avatar" class="avatar">
-		    </div>
+		    </div>-->
 
 		    <div class="container">
 		      <label><b>Usuario</b></label>
@@ -31,7 +31,7 @@
 		    </div>
 
 		    <div class="container" style="background-color:#f1f1f1">
-		      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		      <button type="button" onclick="modal.style.display='none'" class="cancelbtn">Cancel</button>
 		      <span class="psw"><a href="#">¿Olvidaste Contraseña?</a></span>
 		    </div>
 		  </form>
