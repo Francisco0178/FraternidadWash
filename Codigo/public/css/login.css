@@ -4,15 +4,16 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    overflow-x:hidden; 
+    overflow-x:hidden;
 }
 
- /* Bordered form */
+ /* borde para el modal del registro */
+
 form {
     border: 3px solid #f1f1f1;
 }
 
-/* Full-width inputs */
+/* Estilo para el input */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -30,8 +31,28 @@ input[type=text], input[type=password] {
 
 /* estilo para el boton de ingreso */
 
+#ingresar{
+    height: 100px;
+    width: 200px;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    text-align: center;
+    position:fixed;
+   top:20%;
+   left:40%;
+   width:250px;
+   border-style: none;
+}
+#forma{
+    border: none;
+}
+#forma a{
+    text-align: center;
+}
+
 button {
-    background-color: blue;
+    background-color: #8181F7;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -47,58 +68,57 @@ button {
     left: 100%;*/
 }
 
+
+
 #btn_ingreso{
-    color: lightblue;
+    color: blue;
     padding: 14px 20px;
     margin: 0px 0;
     position:relative;
     top: 100%;
-    left: 100%;
+    left: 90%;
+    text-decoration:none;
 }
 
 #btn_ingreso:hover {
     color: red;
+    text-decoration: underline;
 }
 
-/* Extra style for the cancel button (red) */
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: red;
 }
-
-/* Center the avatar image inside this container */
-.imgcontainer {
+/*.imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
+}*/
+img{
+    height: 180px;
+    width: 180px;
+    /*width: 65%;
+    border-radius: 100%;*/
 }
-
-/* Avatar image */
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-/* Add padding to containers */
 .container {
     padding: 16px;
 }
-
-/* The "Forgot password" text */
 span.psw {
     float: right;
     padding-top: 16px;
 }
 
 span.psw a{
-    color: lightblue;
+    color: blue;
+    text-decoration:none;
 }
 
 span.psw a:hover{
     color: red;
+    text-decoration: underline;
 }
 
-/* Change styles for span and cancel button on extra small screens */
+
 @media screen and (max-width: 300px) {
     span.psw {
         display: block;
@@ -108,18 +128,19 @@ span.psw a:hover{
         width: 100%;
     }
 }
- /* The Modal (background) */
+
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.3);
     padding-top: 60px;
 }
 
@@ -134,17 +155,17 @@ strong{
     color:white;
 }
 
-/* Modal Content/Box */
+
 .modal-content {
     background-color: rgba(0,0,0,0.3);
-    margin: 5px auto; /* 15% from the top and centered */
+    margin: 5px auto; 
     border: 1px solid #888;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 30%; 
 }
 
-/* The Close Button */
+
 .close {
-    /* Position it in the top right corner outside of the modal */
+   
     position: absolute;
     right: 25px;
     top: 0;
@@ -153,14 +174,14 @@ strong{
     font-weight: bold;
 }
 
-/* Close button on hover */
+
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
 
-/* Add Zoom Animation */
+
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s;
@@ -175,7 +196,9 @@ strong{
     -moz-border-radius: 0px 0px 15px 15px;
     -webkit-border-radius: 0px 0px 15px 15px;
     border: 0px solid #000000;
+
 }
+
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)}
