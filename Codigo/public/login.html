@@ -3,17 +3,13 @@
 	<head>
 		<title>Login FraternidadWash</title>
 		<meta charset="utf-8">
-		<!--<link rel="stylesheet" type="text/css" href="components/bootstrap-3.3.7-dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="components/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="components/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
-		<link rel="stylesheet" type="text/css" href="components/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">-->
 		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
-		 <!-- Button to open the modal login form -->
-		<a href="#" id="btn_ingreso" onclick="modal.style.display='block'"><b>Registrarse</b></a>
+		 <!-- Link para registrar usuario onclick="modal.style.display='block'"-->
+		<a href="#" id="btn_ingreso" onclick="crear()"><b>Registrarse</b></a>
 
-		<!-- The Modal -->
+		<!-- Modal de registro de usuario-->
 		<div id="id01" class="modal">
 		  <span onclick="modal.style.display='none'" class="close" title="Close Modal">&times;</span>
 
@@ -33,11 +29,28 @@
 
 		    <div class="container" style="background-color:rgba(0,0,0,0.3);">
 		      <button type="button" onclick="modal.style.display='none'" class="cancelbtn">Cancelar</button>
-		      <span class="psw"><a href="#">¿Olvidaste Contraseña?</a></span>
+		      <!--<span class="psw"><a href="#" onclick="recuperar()">¿Olvidaste Contraseña?</a></span>-->
 		    </div>
 		  </form>
 		</div>
 
+		<!-- Modal de recuperacion de contraseña -->
+		<div id="id02" class="modal">
+		  <span onclick="modal.style.display='none'" class="close" title="Close Modal">&times;</span>
+
+		  <!-- Modal Content -->
+		  <form class="modal-content animate" action="index.html">
+
+		    <div class="container">
+		      <label><b>Recuperar Contraseña</b></label>
+		      <input type="text" placeholder="Ingresar Usuario" name="uname" required>
+		      <button type="submit">Recuperar</button>
+		    </div>
+
+		  </form>
+		</div>
+
+		<!-- Login principal -->
 		<div id="ingresar" class="container">
 
 			<form id="forma" class="form-signin" action="index.html">
@@ -45,34 +58,38 @@
     				<img src="img/login/uach.jpg" alt="Avatar" class="avatar">
   				</div>
 				<!--<h1 class="form-signin-heading text-muted">Ingresar</h1>-->
-
 				<input type="text" class="form-control" placeholder="Ingresar Usuario" required="" autofocus="">
 				<input type="password" class="form-control" placeholder="Ingresar Contraseña" required="">
 				<button class="btn btn-lg btn-primary btn-block" type="submit">
 					Ingresar
 				</button>
-
 				<input type="checkbox" checked="checked"><strong>Recordar Usuario</strong>
-				<span class="psw"><a href="#">¿Olvidaste Contraseña?</a></span>
-
-				
+				<span class="psw"><a id="cont" href="#" onclick="recuperar()">¿Olvidaste Contraseña?</a></span>
 			</form>
 			<span class="psw"><a href="index.html"><b>Descubre los temas del momento</b></a></span>
 		</div>
 		 <script>
-			// Get the modal
-			var modal = document.getElementById('id01');
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) {
-			    if (event.target == modal) {
-			        modal.style.display = "none";
-			    }
+
+		 	function crear() {		
+				document.getElementById('id01').style.display='block';
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				    if (event.target == document.getElementById('id01')) {
+				        document.getElementById('id01').style.display = "none";
+				    }
+				}
+		 	}
+
+			function recuperar() {
+				document.getElementById('id02').style.display='block';
+				window.onclick = function(event) {
+				    if (event.target == document.getElementById('id02')) {
+				        document.getElementById('id02').style.display = "none";
+				    }
+				}
 			}
 		</script>
 		<!-- Esto es para que sea cargado todo los elementos del body-->
-	  	<!--<script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
-	  	<script type="application/javascript" src="components/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-		<script type="application/javascript" src="components/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-		<script type="application/javascript" src="components/bootstrap-3.3.7-dist/js/npm.js"></script>-->
+	  	<script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
 	</body>
 </html>
