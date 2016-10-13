@@ -1,0 +1,325 @@
+body{
+  font-family: 'Work Sans', sans-serif;
+  background: rgba(131,164,212,1);
+  background: -moz-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(131,164,212,1)), color-stop(100%, rgba(182,251,255,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
+  background: linear-gradient(135deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83a4d4', endColorstr='#b6fbff', GradientType=1 );
+  margin:0;
+  padding:0;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+::-webkit-input-placeholder {
+  color: #DDD;
+}
+::-moz-placeholder {
+  color: #DDD;
+}
+:-ms-input-placeholder {
+  color: #DDD;
+}
+:-moz-placeholder {
+  color: #DDD;
+}
+.unsel{
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Todo lo relacionado a la barra superior */
+
+.topBar{
+  background:#FFF;
+  width:100%;
+  height:55px;
+  box-shadow: 0px 0px 7px 1px #999;
+  position:relative;
+  z-index:50;
+}
+.topBarItem{
+  text-align: center;
+  position:relative;
+  height:100%;
+  margin-top:7px;
+  min-width:60px;
+  cursor:pointer;
+}
+.topBarItem:hover{
+  opacity:0.9;
+}
+.topBarItem .name{
+  font-size: 10px;
+  margin-top:5px;
+}
+.topBarItem img{
+  height:20px;
+  margin-top:5px;
+}
+.topBarItem .selectionLine{
+  height:4px;
+  width:100%;
+  background:#AAA;
+  position:absolute;
+  bottom:2px;
+  display:none;
+}
+.titleImage{
+  height:30px;
+  margin:5px;
+  margin-left:25px;
+}
+.lupa{
+  position:absolute;
+  top:24px;
+  left:25px;
+  height:15px;
+}
+.searchBar{
+  background:none;
+  width:90%;
+  margin-top:10px;
+  margin-left:15px;
+  font-size:12px;
+  padding:5px;
+  padding-left:30px;
+  color:#888;
+  border:1px #DDD solid;
+  border-radius:9px;
+  outline:none;
+}
+
+
+/* Todo lo relacionado a la barra izquierda*/
+
+.chatWindow{
+  position:relative;
+  height:calc(100vh - 55px);
+  overflow: hidden;
+  width:250px;
+  z-index: 10;
+  box-shadow: 0px 0px 7px 1px #999;
+}
+.searchMessages{
+  height:40px;
+  background:#29abe2;
+  width:100%;
+}
+.searchMessages input{
+  border-radius:6px;
+  border:none;
+  padding:5px;
+  padding-left:10px;
+  margin:8px;
+  width:calc(100% - 16px);
+  outline:none;
+}
+.messages{
+  background:#FFF;
+  height:100%;
+  width:100%;
+  overflow-y: auto;
+}
+.contact{
+  cursor:pointer;
+  height:54px;
+  width:100%;
+  position:relative;
+  border-bottom:solid 1px #EEE;
+}
+.contact:hover{
+  background:#FAFAFA;
+}
+.contact .selectionLine{
+  position:absolute;
+  display:inline-block;
+  height:calc(100% + 1px);
+  width:4px;
+  background:#29abe2;
+}
+.contact .contactImage{
+  position:relative;
+  display:inline-block;
+  margin-left: 10px;
+  margin-top:6px;
+  border-radius:8px;
+  border:2px #FFF solid;
+  box-shadow:0px 0px 2px 0px #CCC;
+  height:38px;
+}
+.contact .text{
+  position:relative;
+  display:inline-block;
+  top:-7px;
+  margin-left:3px;
+}
+.contact .text .contactName{
+  position:relative;
+  font-weight: bold;
+  color:#444;
+  font-size:12px;
+}
+.contact .text .lastMessage{
+  margin-top:5px;
+  position:relative;
+  top:-4px;
+  color:#999;
+  font-size:12px;
+  width:135px;
+}
+.contact .counter{
+  margin-top:20px;
+  margin-right:10px;
+  width:20px;
+  height:20px;
+  text-align:center;
+  line-height: 20px;
+  border-radius:5px;
+  font-weight: bold;
+  background:#39b54a;
+  position:relative;
+  display:inline-block;
+  float:right;
+  top:-4px;
+  color:#FFF;
+  font-size:12px;
+}
+.chat{
+  display:none;
+  bottom:0;
+  position:absolute;
+  height:380px;
+  width:100%;
+}
+.chat .topCharBar{
+  position:relative;
+  z-index:10;
+  height:30px;
+  width:100%;
+  background:#7ac943;
+  cursor:default;
+  box-shadow: 0px 0px 1px 0px #888;
+}
+.chat .topCharBar .chatName{
+  display:inline-block;
+  color:#FFF;
+  font-size:12px;
+  margin-left:10px;
+  line-height: 30px;
+}
+.chat .topCharBar .closeBtn{
+  display:inline-block;
+  color:#FFF;
+  font-size:12px;
+  margin-right:10px;
+  float:right;
+  line-height: 30px;
+  cursor:pointer;
+}
+.chat .topCharBar .closeBtn:hover{
+  color:#DDD;
+}
+.chat .topCharBar .closeBtn:active{
+  color:#AAA;
+}
+.chat .chatMessages{
+  background:#F4F4F8;
+  height:calc(100% - 60px);
+  width:100%;
+  overflow-y: auto;
+}
+.chat .chatInput{
+  position:relative;
+  height:30px;
+  width:100%;
+  border-top:1px solid #EEE;
+}
+.chat .chatInput input{
+  height:30px;
+  width:100%;
+  border:none;
+  outline:none;
+  padding-left:30px;
+}
+.chat .chatInput img{
+  position:absolute;
+  top:9px;
+  left:9px;
+  height:13px;
+  cursor:pointer;
+}
+.chat .chatInput img:hover{
+  opacity:0.5;
+}
+.chat .chatInput img:active{
+  opacity:0.1;
+}
+.chatMessages .messageA{
+  position:relative;
+}
+.chatMessages .messageA:hover > .view{
+    display:inherit;
+}
+.chatMessages .messageA .texto{
+  color:#FFF;
+  padding:6px;
+  font-size:9px;
+  float:right;
+  margin-right: 12px;
+  background:#3fa9f5;
+  max-width:calc(100% - 60px);
+  margin-bottom: 4px;
+  display:block;
+  clear: both;
+}
+.chatMessages .messageA .view{
+  position:relative;
+  color:#BBB;
+  float:right;
+  font-size:6px;
+  margin-top:8px;
+  margin-right: 6px;
+  text-align: center;
+  display:none;
+}
+.chatMessages .messageB{
+  position:relative;
+}
+.chatMessages .messageB:hover > .view{
+    display:inherit;
+}
+.chatMessages .messageB .texto{
+  color:#777;
+  padding:6px;
+  font-size:9px;
+  float:left;
+  background:#FFF;
+  max-width:calc(100% - 60px);
+  margin-bottom: 4px;
+  display:block;
+  clear: both;
+  margin-left: 7px;
+}
+.chatMessages .messageB .view{
+  position:relative;
+  color:#AAA;
+  float:left;
+  font-size:6px;
+  margin-top:8px;
+  text-align: left;
+  margin-left:6px;
+  display:none;
+}
