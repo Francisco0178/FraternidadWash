@@ -90,6 +90,24 @@ body{
     color: #fff;
 }
 
+/*select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 15px; 
+    width: 260px;
+    height: 2px; 
+}*/
+select{
+    width: 265px;
+    border-radius: 5px;
+    color:grey;
+    padding: 7px;
+}
+
 /*    --------------------------------------------------
     :: Seccion del Footer
 	-------------------------------------------------- */
