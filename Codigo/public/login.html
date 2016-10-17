@@ -17,18 +17,38 @@
 		  <form class="modal-content animate" action="index.html">
 
 		    <div class="container">
-		      <label><b>Nuevo Usuario</b></label>
-		      <input type="text" placeholder="Ingresar Usuario" name="uname" required>
+		      <label><b>Nombre</b></label>
+		      <input type="text" placeholder="Ingresar Nombre" name="uname" required>
 
-		      <label><b>Nueva Contraseña</b></label>
-		      <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
+		      <label><b>Apellido</b></label>
+		      <input type="text" placeholder="Ingresar Apellido" name="uapll" required>
+
+		      <label><b>Fecha de Nacimiento</b></label>
+		      <input type="text" placeholder="Ingresar Fecha (ej: dd/mm/aaaa)" name="ufecha" required>
+
+		      <label><b>Sexo</b></label><br>
+			  <select>
+			  	  <option value="">Ingrese Sexo</option>
+				  <option value="Hombre">Hombre</option>
+				  <option value="Mujer">Mujer</option>
+			  </select>
+			  <br>
+
+			  <label><b>Contraseña</b></label>
+		      <input type="text" placeholder="Ingresar Contraseña" name="pswu" required>
+
+		      <label><b>Repita Contraseña</b></label>
+		      <input type="text" placeholder="Repetir Contraseña" name="pswd" required>
+
+		      <label><b>Correo Institucional</b></label>
+		      <input type="text" placeholder="Ingresar Correo Institucional (@alumnos.uach.cl)" name="ucorr" required>
 
 		      <button type="submit">Registrar Usuario</button>
 		      <input type="checkbox" checked="checked"><strong>Recordar Usuario</strong>
 		    </div>
 
 		    <div class="container" style="background-color:rgba(0,0,0,0.3);">
-		      <button type="button" onclick="modal.style.display='none'" class="cancelbtn">Cancelar</button>
+		      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
 		      <!--<span class="psw"><a href="#" onclick="recuperar()">¿Olvidaste Contraseña?</a></span>-->
 		    </div>
 		  </form>
@@ -88,8 +108,9 @@
 				    }
 				}
 			}
+
 		</script>
 		<!-- Esto es para que sea cargado todo los elementos del body-->
-	  	<script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
+	  	<!--<script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>-->
 	</body>
 </html>

@@ -28,6 +28,20 @@ input[type=text], input[type=password] {
     /*border: 0px solid #000000;*/
 }
 
+/* Estilo para el select */
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color:#999;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    /*border: 0px solid #000000;*/
+}
 
 /* estilo para el boton de ingreso */
 
@@ -141,7 +155,7 @@ span.psw a:hover{
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.3);
-    padding-top: 60px;
+    padding-top: 10px;
 }
 
 b{
