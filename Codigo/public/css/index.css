@@ -3,28 +3,50 @@
     -------------------------------------------------- */
 
 body{
-    background: url(http://i.imgur.com/5gD7Lwj.jpg) no-repeat center center fixed;
+    background: url(http://i.imgur.com/ujoVJOm.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
 }
+#cont{
+    color: white;
+    border-radius: 5px;
+    background-color: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: 1px 2px #999;
+}
+
+#cont a{
+    color: white;
+    font-weight: bold;
+}
+
 
 #vertical{
     top:100%;
-    left: 95%;
+    left: 94%;
     position: relative;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 2px #999;
+    font-size: 16px;
 }
 
 /*    --------------------------------------------------
 	:: Seccion del Login
 	-------------------------------------------------- */
-#login {
-    padding-top: 50px
-}
+
 #login .form-wrap {
-    width: 30%;
+    width: 35%;
     margin: 0 auto;
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: none;
+    border-radius: 5px;
 }
 #login img {
     padding-bottom: 20px;
@@ -60,9 +82,9 @@ body{
     display: inline-block;
 }
 #login .checkbox .label {
-    color: #00008b;
+    color: white;
+    font-weight: bold;
     font-size: 13px;
-    font-weight: normal;
 }
 #login .btn.btn-custom {
     font-size: 14px;
@@ -90,17 +112,6 @@ body{
     color: #fff;
 }
 
-/*select{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 2px 0;
-    display: inline-block;
-    border-radius: 5px;
-    border: 1px solid;
-    padding: 15px; 
-    width: 260px;
-    height: 2px; 
-}*/
 select{
     width: 265px;
     border-radius: 5px;
@@ -112,13 +123,19 @@ select{
     :: Seccion del Footer
 	-------------------------------------------------- */
 #footer {
-    color: #00008b;
+    color: white;
     font-size: 12px;
     text-align: center;
+     border-radius: 5px;
+
 }
 #footer p {
     margin-bottom: 0;
+    width: 35%;
+    margin: 0 auto;
+   
 }
+
 #footer a {
-    color: inherit;
+    color: white;
 }

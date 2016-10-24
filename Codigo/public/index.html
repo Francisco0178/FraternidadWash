@@ -12,6 +12,7 @@
 	<body>
 		<!--Link de ingreso superior derecha-->
 		<a href="#" id="vertical" onclick="crear()">Registrate</a>
+
 		<!--Login Principal-->
 		<section id="login">
 		    <div class="container">
@@ -30,18 +31,30 @@
 		                            <label for="key" class="sr-only">Contraseña</label>
 		                            <input type="password" name="key" id="key" required class="form-control" placeholder="Ingrese Contraseña">
 		                        </div>
-		                        <div class="checkbox">
+		                        <!--<div class="checkbox" id="cont">
 		                            <span class="character-checkbox" onclick="muestraContraseña()"></span>
 		                            <span class="label">Mostrar Contraseña</span>
-		                        </div>
+		                        </div>-->
 		                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Ingresar" >
 		                    </form>
-		                    <a href="#" onclick="recuperar()" >¿Olvidaste tu contraseña?</a><br>
-		                    <a href="#" onclick="crear()">¿No estás registrado?</a><br>
-		                    <a href="principal.html">Descubre los temas del momento en la UACH</a>
+		                    <div id="cont">
+			                    <a href="#" onclick="recuperar()" >¿Olvidaste tu contraseña?</a><br>
+			                    <!--<a href="#" onclick="crear()">¿No estás registrado?</a><br>
+			                    <a href="principal.html">Descubre los temas del momento en la UACH</a>-->
+			                </div>
 		                    <hr>
 		        	    </div>
 		    		</div> <!-- /.col-xs-12 -->
+			   		<footer id="footer" id="cont">
+				    	<div class="container">
+				        	<div class="row">
+				            	<div class="col-xs-12">
+				                	<p>FraternidadWash © - 2016</p>
+				                	<p>Potenciado por <strong><a href="http://www.facebook.com/j.luis.a.o" target="_blank">Acuña</a></strong></p>
+				            	</div>
+				        	</div>
+				    	</div>
+					</footer>
 		    	</div> <!-- /.row -->
 		    </div> <!-- /.container -->
 		</section>
@@ -119,16 +132,7 @@
 			</div> <!-- /.modal-dialog -->
 		</div> <!-- /.modal -->
 
-		<footer id="footer">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-xs-12">
-		                <p>FraternidadWash © - 2016</p>
-		                <p>Potenciado por <strong><a href="http://www.facebook.com/j.luis.a.o" target="_blank">Acuña</a></strong></p>
-		            </div>
-		        </div>
-		    </div>
-		</footer>
+
 
       	<!-- Esto es para que sea cargado todo los elementos del body-->
 	  	<script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
