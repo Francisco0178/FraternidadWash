@@ -16,7 +16,7 @@ body{
     background-color: none;
     padding-left: 10px;
     padding-right: 10px;
-    text-shadow: 1px 2px #999;
+    
 }
 
 #cont a{
@@ -31,8 +31,17 @@ body{
     position: relative;
     color: white;
     font-weight: bold;
-    text-shadow: 1px 2px #999;
     font-size: 16px;
+}
+
+.fondo{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
 }
 
 /*    --------------------------------------------------
@@ -94,6 +103,10 @@ body{
     font-size: 13px;
 	text-align: center;
 	display: block;
+}
+
+#login #btn-reg{
+    background-color: #29abe2;
 }
 
 

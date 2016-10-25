@@ -10,8 +10,9 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
 	<body>
+		<div class="fondo"></div>
 		<!--Link de ingreso superior derecha-->
-		<a href="#" id="vertical" onclick="crear()">Registrate</a>
+		<!--<a href="#" id="vertical" onclick="crear()">Registrate</a>-->
 
 		<!--Login Principal-->
 		<section id="login">
@@ -21,11 +22,11 @@
 		        	    <div class="form-wrap">
 		                <!--<h1>Fraternidad Wash</h1>-->
 		                    <form role="form" action="principal.html" method="post" id="login-form" autocomplete="off">
-		                    	<center><img src="http://i.imgur.com/i3ICN6g.png" class="img-responsive" alt="" /></center>
+		                    	<center><img src="./img/login/Titulo2.png" class="img-responsive" alt="" /></center>
 		                    	<br>
 		                        <div class="form-group">
 		                            <label for="email" class="sr-only">Usuario</label>
-		                            <input type="email" name="email" id="email" required class="form-control" placeholder="Ingrese Usuario">
+		                            <input type="email" name="email" id="email" required class="form-control" placeholder="Ingrese Usuario o Correo">
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="key" class="sr-only">Contraseña</label>
@@ -35,8 +36,10 @@
 		                            <span class="character-checkbox" onclick="muestraContraseña()"></span>
 		                            <span class="label">Mostrar Contraseña</span>
 		                        </div>-->
-		                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Ingresar" >
+		                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Inicia sesión" >
+
 		                    </form>
+		                    <input type="submit" id="btn-reg" class="btn btn-custom btn-lg btn-block" onclick="crear()" value="Registrate" >
 		                    <div id="cont">
 			                    <a href="#" onclick="recuperar()" >¿Olvidaste tu contraseña?</a><br>
 			                    <!--<a href="#" onclick="crear()">¿No estás registrado?</a><br>
@@ -71,8 +74,8 @@
 						<h4 class="modal-title">Recuperar Contraseña</h4>
 					</div>
 					<div class="modal-body">
-						<p>Escribe tu usuario</p>
-						<input type="email" name="recovery-usuario" id="recuperar-usuario" required class="form-control" placeholder="Ingrese Usuario" autocomplete="off">
+						<p>Escribe tu correo</p>
+						<input type="email" name="recovery-usuario" id="recuperar-usuario" required class="form-control" placeholder="(@alumnos.uach.cl)" autocomplete="off">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -94,7 +97,7 @@
 						<h4 class="modal-title">Ingresar nuevo usuario</h4>
 					</div>
 					<div class="modal-body">
-						<p>Escribe tu Nombre</p>
+						<!--<p>Escribe tu Nombre</p>
 						<input type="texto" name="email" id="nuevo-nombre" required class="form-control" placeholder="Ingrese Nombre">
 						<br>
 						<p>Escribe tu Apellido</p>
@@ -115,12 +118,15 @@
 						<br>
 						<p>Escribe tu Año de Ingreso</p>
 						<input type="texto" name="email" id="nuevo-anio" required class="form-control" placeholder="Ingrese Año de Ingreso">
+						<br>-->
+						<p>Escribe tu Correo</p>
+						<input type="texto" name="email" id="nuevo-contraseña" required class="form-control" placeholder="(@alumnos.uach.cl)">
 						<br>
 						<p>Escribe tu Contraseña</p>
-						<input type="texto" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Ingrese Contraseña">
+						<input type="password" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Ingrese Contraseña">
 						<br>
-						<p>Escribe tu Correo</p>
-						<input type="texto" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Ingrese Correo (@alumnos.uach.cl)">
+						<p>Repetir tu Contraseña</p>
+						<input type="password" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Repite Contraseña">
 						<br>
 						<!--<div id="messages"></div>-->
 					</div>
