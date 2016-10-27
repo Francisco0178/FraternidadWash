@@ -26,7 +26,7 @@
 		                    	<br>
 		                        <div class="form-group">
 		                            <label for="email" class="sr-only">Usuario</label>
-		                            <input type="email" name="email" id="email" required class="form-control" placeholder="Ingrese Usuario o Correo">
+		                            <input type="email" name="email" id="email" required class="form-control" placeholder="Ingrese Correo">
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="key" class="sr-only">Contraseña</label>
@@ -53,7 +53,7 @@
 				        	<div class="row">
 				            	<div class="col-xs-12">
 				                	<p>FraternidadWash © - 2016</p>
-				                	<p>Potenciado por <strong><a href="http://www.facebook.com/j.luis.a.o" target="_blank">Acuña</a></strong></p>
+				                	<p>Potenciado por <strong><a href="#" target="_self">FraternidadWash</a></strong></p>
 				            	</div>
 				        	</div>
 				    	</div>
@@ -71,15 +71,15 @@
 							<span aria-hidden="true">×</span>
 							<span class="sr-only">Cerrar</span>
 						</button>
-						<h4 class="modal-title">Recuperar Contraseña</h4>
+						<h4 class="modal-title"><strong>Recuperar Contraseña</strong></h4>
 					</div>
 					<div class="modal-body">
 						<p>Escribe tu correo</p>
-						<input type="email" name="recovery-usuario" id="recuperar-usuario" required class="form-control" placeholder="(@alumnos.uach.cl)" autocomplete="off">
+						<input type="email" name="recovery-usuario" id="recuperar-usuario" required class="form-control" placeholder="Terminado en @alumnos.uach.cl" autocomplete="off">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-custom" onclick="usuario_recuperado()">Registrar</button>
+						<button type="button" class="btn btn-custom" onclick="usuario_recuperado()">Restablecer</button>
 					</div>
 				</div> <!-- /.modal-content -->
 			</div> <!-- /.modal-dialog -->
@@ -94,7 +94,7 @@
 							<span aria-hidden="true">×</span>
 							<span class="sr-only">Cerrar</span>
 						</button>
-						<h4 class="modal-title">Ingresar nuevo usuario</h4>
+						<h4 class="modal-title"><strong>Ingresar nuevo usuario</strong></h4>
 					</div>
 					<div class="modal-body">
 						<!--<p>Escribe tu Nombre</p>
@@ -120,19 +120,19 @@
 						<input type="texto" name="email" id="nuevo-anio" required class="form-control" placeholder="Ingrese Año de Ingreso">
 						<br>-->
 						<p>Escribe tu Correo</p>
-						<input type="texto" name="email" id="nuevo-contraseña" required class="form-control" placeholder="(@alumnos.uach.cl)">
+						<input type="texto" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Terminado en @alumnos.uach.cl">
 						<br>
 						<p>Escribe tu Contraseña</p>
 						<input type="password" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Ingrese Contraseña">
 						<br>
-						<p>Repetir tu Contraseña</p>
+						<p>Confirma tu Contraseña</p>
 						<input type="password" name="email" id="nuevo-contraseña" required class="form-control" placeholder="Repite Contraseña">
 						<br>
 						<!--<div id="messages"></div>-->
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-custom" onclick="usuario_creado()">Crear</button>
+						<button type="button" class="btn btn-custom" onclick="usuario_creado()">Registrar</button>
 					</div>
 				</div> <!-- /.modal-content -->
 			</div> <!-- /.modal-dialog -->
