@@ -44,6 +44,10 @@ body{
     opacity: 0.5;
 }
 
+#modal01{
+    width:100%;
+}
+
 /*
 .modal-header{
     background-color: #f2f2f2;
@@ -124,13 +128,18 @@ body{
 }
 
 #login #btn-reg{
-    background-color:#008000;
+    background-color:#FFF0A5;
     /*background-color: #29abe2;*/
     font-weight: bold;
+    color:#468966;
+    box-shadow: none;
 }
 
 #login #btn-login{
     font-weight: bold;
+}
+#login #btn-reg:hover{
+    color:black;
 }
 
 
@@ -141,14 +150,14 @@ body{
     color: #212121;
 }
 .btn-custom {
-    color: #fff;
-    background-color:#b30000;
-	/*background-color: #29088A;*/
+    color:#FFF0A5;
+    background-color:#468966;
+	/*background-color: #29088A;#b30000#008000*/
 }
-.btn-custom:hover,
+/*.btn-custom:hover,
 .btn-custom:focus {
     color: #fff;
-}
+}*/
 
 select{
     width: 265px;
