@@ -1,20 +1,16 @@
-var chat = {
-  active:false,
-  open:function(){
-    $(".chat").slideDown(256,function(){
-      $(".messages").css('height','calc(100% - 420px)');
-    });
-    this.active = true;
-  },
-  close:function(){
-    $(".chat").slideUp(256);
-    $(".messages").css("height","100%");
-    this.active = false;
-  }
-};
-
-
 $(document).ready(function(){
+
+  //CAMBIEN EL "profile" POR EL NOMBRE DE ARCHIVO DE SU SECCIÓN (SIN EL .hml)
+
+  showSection("profile");
+
+
+
+
+
+
+
+
   $( window ).resize(function(size) {
     var width = $(document).width();
     if(width < 965){
@@ -38,3 +34,17 @@ function showSection(id){
   $(".topBarItem .selectionLine").hide(200);
   $(".topBarItem[section='"+id+"']").children(".selectionLine").show(200);
 }
+var chat = {
+  active:false,
+  open:function(){
+    $(".chat").slideDown(256,function(){
+      $(".messages").css('height','calc(100% - 420px)');
+    });
+    this.active = true;
+  },
+  close:function(){
+    $(".chat").slideUp(256);
+    $(".messages").css("height","100%");
+    this.active = false;
+  }
+};
