@@ -5,7 +5,7 @@ $(document).ready(function(){
   //-------------------------------------------------------------------------
   //-------------------------------------------------------------------------
 
-  showSection("profile"); // < - ESTE DEBEN CAMBIAR
+  showSection("users"); // < - ESTE DEBEN CAMBIAR
 
 
   $( window ).resize(function(size) {
