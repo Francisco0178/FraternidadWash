@@ -1,0 +1,15 @@
+{
+  "name": "youniversity",
+  "version": "1.0.0",
+  "description": "Red social para la Universidad Austral de Chile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cuarzo Software",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  }
+}

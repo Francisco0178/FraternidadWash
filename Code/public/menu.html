@@ -1,0 +1,348 @@
+<html>
+  <head>
+    <title>Fraternidad Wash</title>
+    <link href="css/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/profile.css" rel="stylesheet" type="text/css">
+    <link href="css/users.css" rel="stylesheet" type="text/css">
+    <link href="css/questions.css" rel="stylesheet" type="text/css">
+    <link href="css/publications.css" rel="stylesheet" type="text/css">
+    <link href="css/documents.css" rel="stylesheet" type="text/css">
+    <link href="css/events.css" rel="stylesheet" type="text/css">
+    <link href="css/configurations.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <script src="js/library/jquery.js" type="application/javascript"></script>
+    <script src="js/library/resize.js" type="application/javascript"></script>
+    <script src="js/menu.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <!-- Top Bar -->
+    <table class="topBar">
+      <tr>
+        <td width="280px" style="min-width:275px">
+          <img class="titleImage" src="img/menu/title.png"></img>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="profile">
+            <img src="img/menu/topBar/01.png"></img>
+            <div class="name" style="color:#3fa9f5">Perfil</div>
+            <div class="selectionLine" style="background:#3fa9f5;display:inherit"></div>
+          </div>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="users">
+            <img src="img/menu/topBar/02.png"></img>
+            <div class="name" style="color:#7ac943">Usuarios</div>
+            <div class="selectionLine" style="background:#7ac943"></div>
+          </div>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="questions">
+            <img src="img/menu/topBar/03.png"></img>
+            <div class="name" style="color:#ff931e">Preguntas</div>
+            <div class="selectionLine" style="background:#ff931e"></div>
+          </div>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="publications">
+            <img src="img/menu/topBar/04.png"></img>
+            <div class="name" style="color:#ff1d25">Publicaciones</div>
+            <div class="selectionLine" style="background:#ff1d25"></div>
+          </div>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="documents">
+            <img src="img/menu/topBar/05.png"></img>
+            <div class="name" style="color:#ff7bac">Documentos</div>
+            <div class="selectionLine" style="background:#ff7bac"></div>
+          </div>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="events">
+            <img src="img/menu/topBar/06.png"></img>
+            <div class="name" style="color:#662d91">Eventos</div>
+            <div class="selectionLine" style="background:#662d91"></div>
+          </div>
+        </td>
+        <td width="130px">
+          <div class="topBarItem unsel" section="configurations">
+            <img src="img/menu/topBar/07.png"></img>
+            <div class="name" style="color:#bdccd4">Configuraciones</div>
+            <div class="selectionLine" style="background:#bdccd4"></div>
+          </div>
+        </td>
+        <td width="25%" style="position:relative">
+          <img src="img/menu/lupa.png" class="lupa"></img>
+          <input class="searchBar" type="text" placeholder="Usuarios, eventos, noticias, etc"></input>
+        </td>
+      </tr>
+    </table>
+    <!-- Left Bar -->
+    <div class="chatWindow">
+
+      <div class="searchMessages">
+        <td><input type="text" placeholder="Buscar"></td>
+      </div>
+      <div class="messages">
+
+        <div class="contact unsel">
+          <div class="selectionLine" style="display:none"></div>
+          <img class="contactImage" src="img/menu/nacho.png">
+          <div class="contactStatus ON"></div>
+          <div class="text">
+            <div class="contactName">Ignacio Samur</div>
+            <div class="lastMessage truncate">Hola loco, como estas? Tanto tiempo no?</div>
+          </div>
+          <div class="counter">5</div>
+        </div>
+
+        <div class="contact unsel" onclick="chat.open()">
+          <div class="selectionLine"></div>
+          <img class="contactImage" src="img/menu/elliot.png">
+          <div class="contactStatus ON"></div>
+          <div class="text">
+            <div class="contactName">Elliot Alderson</div>
+            <div class="lastMessage truncate">I am ready to launch the hack!</div>
+          </div>
+          <div class="counter">1</div>
+        </div>
+
+        <div class="contact unsel">
+          <div class="selectionLine" style="display:none"></div>
+          <img class="contactImage" src="img/menu/matu.jpg">
+          <div class="contactStatus OFF"></div>
+          <div class="text">
+            <div class="contactName">Jorge Maturana</div>
+            <div class="lastMessage truncate">Te gusta la idea?</div>
+          </div>
+          <div class="counter">1</div>
+        </div>
+
+        <div class="contact unsel">
+          <div class="selectionLine" style="display:none"></div>
+          <img class="contactImage" src="img/menu/mark.jpeg">
+          <div class="contactStatus ON"></div>
+          <div class="text">
+            <div class="contactName">Mark Zuckerberg</div>
+            <div class="lastMessage truncate">Nice site dude!</div>
+          </div>
+          <div class="counter">1</div>
+        </div>
+
+        <div class="contact unsel">
+          <div class="selectionLine" style="display:none"></div>
+          <img class="contactImage" src="img/menu/jobs.png">
+          <div class="contactStatus OFF"></div>
+          <div class="text">
+            <div class="contactName">Steve Jobs</div>
+            <div class="lastMessage truncate">You touched my heart...</div>
+          </div>
+          <div class="counter" style="display:none"></div>
+        </div>
+
+        <div class="contact unsel">
+          <div class="selectionLine" style="display:none"></div>
+          <img class="contactImage" src="img/menu/user.png">
+          <div class="contactStatus ON"></div>
+          <div class="text">
+            <div class="contactName">Niño de Relleno</div>
+            <div class="lastMessage truncate">Hola jaja</div>
+          </div>
+          <div class="counter" style="display:none"></div>
+        </div>
+
+        <div class="contact unsel">
+          <div class="selectionLine" style="display:none"></div>
+          <img class="contactImage" src="img/menu/user.png">
+          <div class="contactStatus ON"></div>
+          <div class="text">
+            <div class="contactName">Otro Usuario</div>
+            <div class="lastMessage truncate">Que fome mi nombre.</div>
+          </div>
+          <div class="counter" style="display:none"></div>
+        </div>
+
+      </div>
+      <div class="chat">
+
+        <div class="topCharBar gradOrange unsel">
+          <div class="contactStatus ON"></div>
+          <div class="chatName">Elliot Alderson</div>
+          <div class="closeBtn" onclick="chat.close()">×</div>
+        </div>
+
+        <div class="chatMessages">
+          <div class="messageA">
+            <div class="texto">Hello bro!<br>How you doing</div>
+            <div class="view">✓ 3:45</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">Do you remember the password of the last thing we made las night?</div>
+            <div class="view">✓ 3:46</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">Nope, why?</div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">Oh sorry! I mean yes! Wait a sec...</div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">Ok</div>
+            <div class="view">✓ 3:45</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">You there?</div>
+            <div class="view">✓ 3:46</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">Yes</div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">please hold on</div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">
+              <table class="uploadedFile">
+                <td><img src="img/menu/file.png"></td>
+                <td><a target="_blank" href="http://www.hola.com">Informe.zip</a></td>
+              </table>
+            </div>
+            <div class="view">✓ 3:45</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">hahaha</div>
+            <div class="view">✓ 3:46</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">Here it is!!!</div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">Take a look</div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">OMG!</div>
+            <div class="view">✓ 3:45</div>
+          </div>
+          <div class="messageA">
+            <div class="texto">I will patch it now!! Give me a few minutes</div>
+            <div class="view">✓ 3:46</div>
+          </div>
+          <div class="messageA">
+            <div class="texto"><img class="uploadedImage" src="img/menu/matu.jpg"></div>
+            <div class="view">✓ 3:46</div>
+          </div>
+          <div class="messageB">
+            <div class="texto"><a target="_blank" href="http://www.hola.com">http://www.hola.com</a></div>
+            <div class="view">3:47</div>
+          </div>
+          <div class="messageB">
+            <div class="texto">I am ready to launch the attack!</div>
+            <div class="view">3:47</div>
+          </div>
+        </div>
+
+        <div class="chatInput">
+          <input type="text" placeholder="Mensaje">
+          <img class="upload unsel" src="img/menu/attach.png">
+        </div>
+
+      </div>
+    </div>
+    <!-- Middle Bar -->
+    <div class="middleBar">
+
+    </div>
+    <!-- Right Bar -->
+    <div class="rightBar unsel">
+      <div class="sectionName">Notifiaciones</div>
+      <div class="rightWindow notifications">
+
+        <div class="notification">
+          <img class="img" src="img/menu/topBar/04.png">
+          <div class="cont">
+            <div class="name">Eduardo Hopperdietzel</div>
+            <div class="time">Hace 3 min</div>
+          </div>
+          <div class="desc">Cambiaron de profe de Lineal</div>
+          <div class="state new"></div>
+        </div>
+
+        <div class="notification">
+          <img class="img" src="img/menu/topBar/04.png">
+          <div class="cont">
+            <div class="name">Eduardo Hopperdietzel</div>
+            <div class="time">Hace 3 min</div>
+          </div>
+          <div class="desc">Cambiaron de profe de Lineal</div>
+          <div class="state new"></div>
+        </div>
+
+        <div class="notification">
+          <img class="img" src="img/menu/topBar/04.png">
+          <div class="cont">
+            <div class="name">Eduardo Hopperdietzel</div>
+            <div class="time">Hace 3 min</div>
+          </div>
+          <div class="desc">Cambiaron de profe de Lineal</div>
+          <div class="state old"></div>
+        </div>
+
+        <div class="notification">
+          <img class="img" src="img/menu/topBar/04.png">
+          <div class="cont">
+            <div class="name">Eduardo Hopperdietzel</div>
+            <div class="time">Hace 3 min</div>
+          </div>
+          <div class="desc">Cambiaron de profe de Lineal</div>
+          <div class="state old"></div>
+        </div>
+
+      </div>
+
+      <div class="sectionName">Próximos Eventos</div>
+      <div class="rightWindow events">
+
+        <div class="event red">
+          <div class="name">Prueba Cálculo I</div>
+          <div class="time">Lun 17:30</div>
+        </div>
+        <div class="event green">
+          <div class="name">Peña Shaw</div>
+          <div class="time">Mier 21:30</div>
+        </div>
+        <div class="event orange">
+          <div class="name">Trabajo 2 Lineal</div>
+          <div class="time">Jue 23:59</div>
+        </div>
+        <div class="event red">
+          <div class="name">Prueba Objetos</div>
+          <div class="time">Vie 17:30</div>
+        </div>
+
+      </div>
+
+      <div class="sectionName">Anuncios</div>
+      <div class="rightWindow adds">
+
+        <div class="add">
+          <img src="img/example.jpg"/>
+          <div class="cont">
+            <div class="name truncate">Aniversario Punto</div>
+            <div class="desc">Los invitamos al show máximo este viernes a las 20:30 hrs</div>
+            <a class="phone truncate" href="tel:+6494461709">+56 9 321 535 44</a>
+            <a class="site truncate" href="http://www.puntodequiebre.cl">www.puntodequiebre.cl</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
