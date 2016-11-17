@@ -1,14 +1,11 @@
 $(document).ready(function(){
+  //-------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
+  //CAMBIEN EL "profile" POR EL NOMBRE DE ARCHIVO DE SU SECCIÓN (SIN EL .html)
+  //-------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
 
-  //CAMBIEN EL "profile" POR EL NOMBRE DE ARCHIVO DE SU SECCIÓN (SIN EL .hml)
-
-  showSection("profile");
-
-
-
-
-
-
+  showSection("profile"); // < - ESTE DEBEN CAMBIAR
 
 
   $( window ).resize(function(size) {
