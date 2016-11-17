@@ -9,22 +9,6 @@ var port = 2000;
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
-   res.send('Hello GET');
-})
-
-app.post('/', function (req, res) {
-   res.send('Hello POST');
-})
-
-app.delete('/del_user', function (req, res) {
-   res.send('Hello DELETE');
-})
-
-app.get('/prohibido', function (req, res) {
-   res.send('<img src="http://hdporntime.com/wp-content/uploads/2015/12/Zafira-young-porn-star-sex-pictures-08.jpg"></img>');
-})
-
 
 http.listen(port, function(){
   console.log('Escuchando en el puerto: ' + port);

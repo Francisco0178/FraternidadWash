@@ -1,8 +1,9 @@
 {
-  "name": "fraternidadwash",
+  "name": "youniversity",
   "version": "1.0.0",
   "description": "Red social de la Universidad Austral de Chile",
   "main": "app.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +20,6 @@
     "express": "^4.14.0",
     "mongodb": "^2.2.10",
     "socket.io": "^1.4.8"
-  }
+  },
+  "devDependencies": {}
 }
