@@ -5,8 +5,7 @@ $(document).ready(function(){
   //-------------------------------------------------------------------------
   //-------------------------------------------------------------------------
 
-  showSection("profile"); // < - ESTE DEBEN CAMBIAR
-
+  showSection("questions"); // < - ESTE DEBEN CAMBIAR
 
   $( window ).resize(function(size) {
     var width = $(document).width();
@@ -26,6 +25,14 @@ $(document).ready(function(){
 
 function showSection(id){
   $(".middleBar").hide().load(id + ".html",function(){
+    $(".btn").click(function(){
+      $(".list").show(300);
+    });
+    $(document).click(function(evento){
+      if(!$(".btn").is(evento.target)){
+        $(".list").hide(300);
+      }
+    });
     $(this).fadeIn(200);
   });
   $(".topBarItem .selectionLine").hide(200);
