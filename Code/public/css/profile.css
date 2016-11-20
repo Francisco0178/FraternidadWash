@@ -13,7 +13,7 @@
   left:240px;
   height:calc(100vh - 55px);
   position:absolute;
-  overflow-y: auto;
+  overflow-y: overlay;
   z-index: 10;
 }
 .middleBar .profileWindow{
@@ -152,8 +152,8 @@
   box-shadow: 0px 0px 3px 0px #AAA;
   text-align: left;
   margin-top: 10px;
-  padding-top: 2px;
-  padding-left: 5px;
+  padding-left: 2px;
+  position:relative;
 }
 .middleBar .sections .04{
 
@@ -161,10 +161,16 @@
 .middleBar .sections .section{
   display:inline-block;
   opacity:0.8;
+  margin:5px;
+  padding:5px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+.middleBar .sections .section:hover{
+  opacity:0.5;
 }
 .middleBar .sections .section img{
   height:23px;
-  margin:7px;
 }
 .middleBar .photos{
   background:#FFF;
@@ -188,7 +194,7 @@
   position:relative;
   height:100%;
 }
-.middleBar .publications{
+.middleBar .sec.publications{
   max-width:calc(100% - 10px);
   margin-top: 10px;
   overflow: hidden;
@@ -279,4 +285,25 @@
   border:5px solid #FFF;
   border-radius: 5px;
   box-shadow: 0px 0px 2px 0px #AAA;
+}
+.newPost{
+  background:#3fa9f5;
+  border-radius:10px;
+  padding:7px;
+  color:#FFF;
+  position: absolute;
+  right:8px;
+  top:7px;
+  font-size:13px;
+  text-align:center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.postWindow{
+  background:#FFF;
+  border-radius: 10px;
+  width:550px;
+  height:200px;
+  margin: 0 auto;
+  margin-top:calc(50vh - 200px);
 }

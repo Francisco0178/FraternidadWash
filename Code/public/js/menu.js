@@ -1,3 +1,5 @@
+var currentSection = "profile";
+var currentProfileSection = "publications";
 $(document).ready(function(){
   //-------------------------------------------------------------------------
   //-------------------------------------------------------------------------
@@ -5,7 +7,7 @@ $(document).ready(function(){
   //-------------------------------------------------------------------------
   //-------------------------------------------------------------------------
 
-  showSection("profile"); // < - ESTE DEBEN CAMBIAR
+  showSection(currentSection); // < - ESTE DEBEN CAMBIAR
 
 
   $( window ).resize(function(size) {
@@ -27,9 +29,29 @@ $(document).ready(function(){
 function showSection(id){
   $(".middleBar").hide().load(id + ".html",function(){
     $(this).fadeIn(200);
+
+    //Profile
+    if(currentSection == "profile"){
+      function displaySection(section){
+        $(".sections .section").css({background:"none"});
+        $(".sections [section='"+section+"']").css({background:"#EEE"});
+        if(section != currentProfileSection){
+          $("."+currentProfileSection).hide();
+          $("."+section).show();
+        }
+        currentProfileSection = section;
+      }
+      $(".sections .section").click(function(){
+        displaySection($(this).attr("section"));
+      });
+      displaySection(currentProfileSection);
+    }
+
+
   });
   $(".topBarItem .selectionLine").hide(200);
   $(".topBarItem[section='"+id+"']").children(".selectionLine").show(200);
+
 }
 var chat = {
   active:false,
