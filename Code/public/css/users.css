@@ -1,14 +1,80 @@
 /* Usuarios */
 
-.primero{
-	position: relative;
-	display: inline-block;
-	height: 100px;
-	width: 100px;
-	border-radius: 100%;
-	border: 2px solid black;
-	margin-left: 5px;
-	margin-top: 5px;
-	text-align: center;
+#primero{
+	height: 400px;
+	width: 100%;
+	background-color: #075608;
+        border-radius:5px;
+        padding-top:9px;
+}
 
+.primerouno{
+	width: 70%;
+	height: 50px;
+	text-align: center;
+	background-color:#43F96D;
+  	color: white;
+  	margin: auto;
+  	line-height: 30px;
+	font-weight: bold;
+        border-radius:25px;
+        font-size: 25px;
+}
+
+.primerodos{
+   padding:10px;
+   text-align: center;
+}
+
+.primerodos input[type=text] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.primerodos input[type=text]:hover {
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.primerodos input[type=submit] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:15px;
+}
+
+.primerodos input[type=submit]:hover {
+    background-color: #039706;
+    cursor: pointer;
+    text-decoration:underline;
+}
+#linea{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width:95%;
+}
+.selalumnos{
+    height:50px;
+    width:20%;
+    border-radius:5px;
 }
