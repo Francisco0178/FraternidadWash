@@ -1,24 +1,29 @@
 /* Usuarios */
 
 #primero{
-	height: 400px;
-	width: 100%;
-	background-color: #075608;
-        border-radius:5px;
-        padding-top:9px;
+    height: 100%;
+    width: 100%;
+    background-color: #075608;
+        border-radius:15px;
+        padding-top:1px;
+
 }
 
 .primerouno{
-	width: 70%;
-	height: 50px;
-	text-align: center;
-	background-color:#43F96D;
-  	color: white;
-  	margin: auto;
-  	line-height: 30px;
-	font-weight: bold;
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    background-color:#43F96D;
+    color: white;
+    margin: auto;
+    line-height: 30px;
+    font-weight: bold;
         border-radius:25px;
         font-size: 25px;
+}
+
+.primerouno p{
+        padding-top: 10px;
 }
 
 .primerodos{
@@ -30,10 +35,10 @@
     width: 50%;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 15px;
     font-size: 16px;
     background-color: white;
-    background-image: url('searchicon.png');
+    background-image: url('./img/menu/lupa.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -77,4 +82,29 @@
     height:50px;
     width:20%;
     border-radius:5px;
+}
+.carrerauno {
+    background-color:#00C957;
+    position: relative;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    -webkit-box-shadow: inset -13px 9px 79px -29px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset -13px 9px 79px -29px rgba(0,0,0,0.75);
+    box-shadow: inset -13px 9px 79px -29px rgba(0,0,0,0.75);
+}
+
+.carrerauno p{
+    position: relative;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top:15px;
+}
+#Agro p{
+    font-size: 30px;
 }
