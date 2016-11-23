@@ -37,8 +37,24 @@ html,body{
     box-shadow: 0 0 2px 0 #FFF;
 }
 .middleBar::-webkit-scrollbar {
-    width: 5px;
-    -webkit-appearance:
+  width: 5px;
+}
+.fromPublications::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background:#FFF;
+    box-shadow: 0 0 2px 0 #FFF;
+}
+.fromPublications::-webkit-scrollbar {
+  width: 5px;
+}
+.blackBackground{
+  height:100vh;
+  width:100vw;
+  background:rgba(0,0,0,0.4);
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:500;
 }
 table {
     border-collapse: separate;
@@ -68,6 +84,12 @@ table {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.btn{
+  cursor:pointer;
+}
+.btn:hover{
+  opacity:0.8;
 }
 .hide{
   display:none;
@@ -186,7 +208,7 @@ table {
   background:#FFF;
   height:100%;
   width:100%;
-  overflow-y: auto;
+  overflow-y: overlay;
 }
 .contact{
   cursor:pointer;
