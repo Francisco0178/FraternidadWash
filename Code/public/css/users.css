@@ -8,52 +8,21 @@
   z-index: 10;
   top:-500px;
 }
-.middleBar{
-  width:calc(100vw - 525px);
-  min-width:450px;
-  left:240px;
-  height:calc(100vh - 55px);
-  position:absolute;
-  overflow-y: overlay;
-  overflow-x: hidden;
-  z-index: 10;
-}
-.middleBar .usersWindowdos{
-  background:#FFF;
-  width:calc(100% - 10px);
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0px 0px 3px 0px #AAA;
-  text-align: center;
-  padding-top: 15px;
-  padding-bottom: 10px;
+
 
 }
 
 #primero{
-    /*height: 100%;*/
     width: 100%;
-    background-color: #075608;*/
+    background-color: #FFFFFF;
     border-radius:15px;
     padding-top:1px;
-    /*overflow: auto;*/
     font-family: 'Work Sans', sans-serif;
-    /*font-family:  sans-serif;*/
 
 }
 
 .primerouno{
-    width: 70%;
-    height: 50px;
-    text-align: center;
-    background-color:#43F96D;
-    color: white;
-    margin: auto;
-    line-height: 30px;
-    font-weight: bold;
-    border-radius:25px;
-    font-size: 25px;
-           
-
+    height: 20px;
 }
 
 .primerouno p{
@@ -81,41 +50,12 @@
     transition: width 0.4s ease-in-out;
 }
 
-
-/*
-::-webkit-input-placeholder { 
-        color:    #000;
-}
-:-moz-placeholder { 
-       color:    #000;
-       opacity:  1;
-}
-::-moz-placeholder { 
-       color:    #000;
-       opacity:  1;
-}
-:-ms-input-placeholder { 
-       color:    #000;
-}
-*/
-
-
 .primerodos input[type=text]:hover {
     font-weight: bold;
     cursor: pointer;
 }
 
 .primerodos input[type=submit] {
-    /*background-color: #4CAF50; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius:15px;
-    width: 200px;*/
       width: 200px;
       background: #34d94d;
       background-image: -webkit-linear-gradient(top, #34d94d, #2bb840);
@@ -135,11 +75,7 @@
 }
 
 .primerodos input[type=submit]:hover {
-    /*background-color: #039706;
-    cursor: pointer;
-    font-weight: bold;*/
       cursor: pointer;
-      
       opacity: 0.9;
       text-decoration: none;
       border-style: none;
@@ -152,7 +88,7 @@
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
-    width:95%;
+    width:100%;
 }
 .selalumnos{
     height:50px;
@@ -192,9 +128,7 @@
 }
 
 .carrerauno a:hover{
-    /*color:red;*/
     opacity:0.7;
-
 }
 
 #busqueda{
@@ -225,4 +159,24 @@
     padding-bottom: 10px;
     height: 25px;
     width: 25px;
+}
+
+#separador{
+    width: 150px;
+}
+
+#separadordos{
+    width: 350px;
+}
+
+#tablas{
+    height:25px;
+}
+
+.estudiantes a{
+    text-decoration: none;
+    color:#3fa9f5;
+}
+.estudiantes a:hover{
+    opacity: 0.7;
 }
