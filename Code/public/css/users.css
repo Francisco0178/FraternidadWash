@@ -180,3 +180,8 @@
 .estudiantes a:hover{
     opacity: 0.7;
 }
+
+.estudiantes table{
+  background-color: #C7FFA8;
+  width:100%;
+}
