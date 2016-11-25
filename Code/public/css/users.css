@@ -9,9 +9,6 @@
   top:-500px;
 }
 
-
-}
-
 #primero{
     width: 100%;
     background-color: #FFFFFF;
@@ -80,6 +77,7 @@
       text-decoration: none;
       border-style: none;
 }
+
 #linea{
     display: block;
     margin-top: 0.5em;
@@ -173,15 +171,17 @@
     height:25px;
 }
 
+
 .estudiantes a{
     text-decoration: none;
-    color:#3fa9f5;
+    color:#33cc33;/*#3fa9f5;*/
 }
 .estudiantes a:hover{
     opacity: 0.7;
 }
 
 .estudiantes table{
-  background-color: #C7FFA8;
+  background-color: #ffffe6;/*#C7FFA8;*/
   width:100%;
+   
 }
