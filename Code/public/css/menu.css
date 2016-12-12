@@ -1,6 +1,5 @@
 html,body{
   font-family: 'Work Sans', sans-serif;
-
   background: rgba(131,164,212,1);
   background: -moz-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(131,164,212,1)), color-stop(100%, rgba(182,251,255,1)));
@@ -8,17 +7,73 @@ html,body{
   background: -o-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
   background: -ms-linear-gradient(-45deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
   background: linear-gradient(135deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83a4d4', endColorstr='#b6fbff', GradientType=1 );
-
   margin:0;
   padding:0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
+}
+:root {
+  --azul:#0071bc;
+  --celeste: #3fa9f5;
+  --verde:#7ac943;
+  --rojo:#ff1d25;
+  --naranjo:#ff931e;
+  --gris:#bdccd4;
+  --rosado:#ff7bac;
+}
+@keyframes load {
+    0% {background-color: #FFF;}
+    50% {background-color: #DDD;}
+    100% {background-color: #FFF;}
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+.shadow{
+  box-shadow: 0px 0px 3px 0px #AAA;
+}
+.loading {
+    background-color: #FFF;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.inline{
+  display:inline-block;
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #EEE;
+}
+.dropdown{
+  background:#FAFAFA;
+  border-radius: 5px;
+  padding:10px;
+  color:#888;
+  box-shadow: 0px 0px 1px 0px #CCC;
+  position:absolute;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: left;
+}
+.dropdown .arrow-up{
+  position:absolute;
+  top:-5px;
+  right:6px;
 }
 ::-webkit-scrollbar {
     width: 7px;
-    -webkit-appearance:
+}
+.ball-scale{
+  position:absolute;
+}
+.ball-scale div{
+  background:blue;
 }
 
 ::-webkit-scrollbar-track {
@@ -31,12 +86,12 @@ html,body{
     box-shadow: 0 0 2px 0 #FFF;
     opacity:0.3;
 }
-.middleBar::-webkit-scrollbar-thumb {
+#middleBar::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background:#FFF;
     box-shadow: 0 0 2px 0 #FFF;
 }
-.middleBar::-webkit-scrollbar {
+#middleBar::-webkit-scrollbar {
   width: 5px;
 }
 .fromPublications::-webkit-scrollbar-thumb {
@@ -47,7 +102,7 @@ html,body{
 .fromPublications::-webkit-scrollbar {
   width: 5px;
 }
-.blackBackground{
+#modal{
   height:100vh;
   width:100vw;
   background:rgba(0,0,0,0.4);
@@ -55,6 +110,10 @@ html,body{
   top:0;
   left:0;
   z-index:500;
+  overflow-y: auto;
+}
+.publication{
+  display:none;
 }
 table {
     border-collapse: separate;
@@ -87,46 +146,51 @@ table {
 }
 .btn{
   cursor:pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 .btn:hover{
-  opacity:0.8;
+  filter: brightness(110%);
 }
-.hide{
-  display:none;
+.btn:active{
+  filter: brightness(90%);
 }
 .gradGreenBlue{
   background: #185a9d;
   background: -moz-linear-gradient(left, #185a9d 0%, #43cea2 100%);
   background: -webkit-linear-gradient(left, #185a9d 0%,#43cea2 100%);
   background: linear-gradient(to right, #185a9d 0%,#43cea2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#185a9d', endColorstr='#43cea2',GradientType=1 );
 }
 .gradOrange{
   background: #f46b45;
   background: -moz-linear-gradient(left, #f46b45 0%, #eea849 100%);
   background: -webkit-linear-gradient(left, #f46b45 0%,#eea849 100%);
   background: linear-gradient(to right, #f46b45 0%,#eea849 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f46b45', endColorstr='#eea849',GradientType=1 );
 }
 
 /* Todo lo relacionado a la barra superior */
 
-.topBar{
+#topBar{
   background:#FFF;
-  width:100%;
+  width:100vw;
   height:55px;
   box-shadow: 0px 0px 7px 1px #999;
   position:relative;
   z-index:50;
+  padding:0;
+  margin:0;
 }
 .topBarItem{
   text-align: center;
   position:relative;
-  height:100%;
-  margin-top:7px;
+  height:55px;
   min-width:60px;
   cursor:pointer;
   opacity: 0.9;
+  vertical-align: top;
 }
 .topBarItem:hover{
   opacity:0.7;
@@ -137,14 +201,14 @@ table {
 }
 .topBarItem img{
   height:20px;
-  margin-top:5px;
+  margin-top:8px;
 }
 .topBarItem .selectionLine{
   height:4px;
   width:100%;
   background:#AAA;
   position:absolute;
-  bottom:2px;
+  bottom:0;
   display:none;
 }
 .titleImage{
@@ -157,14 +221,13 @@ table {
 .lupa{
   position:absolute;
   top:24px;
-  left:25px;
+  left:10px;
   height:15px;
 }
 .searchBar{
   background:none;
-  width:90%;
+  width:85%;
   margin-top:10px;
-  margin-left:15px;
   font-size:12px;
   padding:5px;
   padding-left:30px;
@@ -177,7 +240,7 @@ table {
 
 /* Todo lo relacionado a la barra izquierda*/
 
-.chatWindow{
+#chatWindow{
   margin-top:0;
   vertical-align: top;
   display: inline;
@@ -201,7 +264,7 @@ table {
   padding:5px;
   padding-left:10px;
   margin:8px;
-  width:calc(100% - 16px);
+  width:calc(100% - 30px);
   outline:none;
 }
 .messages{
@@ -209,6 +272,8 @@ table {
   height:100%;
   width:100%;
   overflow-y: overlay;
+  margin-top: 0;
+  vertical-align: top;
 }
 .contact{
   cursor:pointer;
@@ -238,7 +303,7 @@ table {
   width:10px;
 }
 .contactStatus.ON{
-  background:#7ac943;
+  background:var(--verde);
 }
 .contactStatus.OFF{
   background:#666;
@@ -252,6 +317,7 @@ table {
   border:2px #FFF solid;
   box-shadow:0px 0px 2px 0px #CCC;
   height:38px;
+  width:38px;
 }
 .contact .text{
   position:relative;
@@ -290,14 +356,14 @@ table {
   color:#FFF;
   font-size:12px;
 }
-.chat{
+#chat{
   display:none;
   bottom:0;
   position:absolute;
   height:380px;
   width:100%;
 }
-.chat .topCharBar{
+#chat .topCharBar{
   position:relative;
   z-index:10;
   height:30px;
@@ -305,17 +371,17 @@ table {
   cursor:default;
   box-shadow: 0px 0px 3px 0px #AAA;
 }
-.chat .topCharBar .chatName{
+#chat .topCharBar .chatName{
   display:inline-block;
   color:#FFF;
   font-size:12px;
   margin-left:32px;
   line-height: 30px;
 }
-.chat .topCharBar .chatName:hover{
+#chat .topCharBar .chatName:hover{
   text-decoration: underline;
 }
-.chat .topCharBar .closeBtn{
+#chat .topCharBar .closeBtn{
   display:inline-block;
   color:#FFF;
   font-size:12px;
@@ -324,13 +390,13 @@ table {
   line-height: 28px;
   cursor:pointer;
 }
-.chat .topCharBar .closeBtn:hover{
+#chat .topCharBar .closeBtn:hover{
   color:#DDD;
 }
-.chat .topCharBar .closeBtn:active{
+#chat .topCharBar .closeBtn:active{
   color:#AAA;
 }
-.chat .chatMessages{
+#chat .chatMessages{
   background:#F4F4F8;
   height:calc(100% - 70px);
   width:100%;
@@ -345,30 +411,31 @@ table {
   width:8px;
   left:13px;
 }
-.chat .chatInput{
+#chat .chatInput{
   position:relative;
   height:30px;
   width:100%;
   border-top:1px solid #EEE;
 }
-.chat .chatInput input{
+#chat .chatInput input{
   height:30px;
   width:100%;
+  max-width:195px;
   border:none;
   outline:none;
   padding-left:30px;
 }
-.chat .chatInput img{
+#chat .chatInput img{
   position:absolute;
   top:9px;
   left:9px;
   height:13px;
   cursor:pointer;
 }
-.chat .chatInput img:hover{
+#chat .chatInput img:hover{
   opacity:0.5;
 }
-.chat .chatInput img:active{
+#chat .chatInput img:active{
   opacity:0.1;
 }
 .chatMessages .messageA{
@@ -381,10 +448,10 @@ table {
   word-wrap:break-word;
   color:#FFF;
   padding:6px;
-  font-size:9px;
+  font-size:11px;
   float:right;
   margin-right: 5px;
-  background:#3fa9f5;
+  background:var(--celeste);
   max-width:calc(100% - 60px);
   margin-bottom: 4px;
   display:block;
@@ -412,7 +479,7 @@ table {
   word-wrap:break-word;
   color:#777;
   padding:6px;
-  font-size:9px;
+  font-size:11px;
   float:left;
   background:#FFF;
   max-width:calc(100% - 60px);
@@ -471,7 +538,7 @@ table {
   box-shadow: 0px 0px 3px 0px #AAA;
 }
 /* Barra Derecha */
-.rightBar{
+#rightBar{
   padding:10px;
   min-width:270px;
   right:0;
@@ -494,7 +561,7 @@ table {
 }
 .rightWindow.notifications{
   overflow: auto;
-  height:120px;
+  max-height:120px;
 }
 .notification{
   cursor:pointer;
@@ -550,7 +617,7 @@ table {
   background:#CCC;
 }
 .notification .state.new{
-  background:#3fa9f5;
+  background:var(--celeste);
 }
 .event{
   height:20px;
@@ -562,13 +629,13 @@ table {
   opacity:0.8;
 }
 .event.red{
-  color:#ff1d25;
+  color:var(--rojo);
 }
 .event.orange{
-  color:#ff931e;
+  color:var(--naranjo);
 }
 .event.green{
-  color:#7ac943;
+  color:var(--verde);
 }
 .event .name{
   font-weight: bold;
@@ -599,9 +666,9 @@ table {
   position: relative;
 }
 .adds .name{
-    position: relative;
+  position: relative;
   color:#333;
-  font-size:11px;
+  font-size:13px;
   font-weight: bold;
 }
 .adds .desc{
@@ -613,14 +680,14 @@ table {
 .adds .phone{
   position: relative;
   top: 7px;
-  color:#3fa9f5;
+  color:var(--celeste);
   font-size:10px;
   text-decoration: none;
 }
 .adds .site{
   position: relative;
   top: 10px;
-  color:#3fa9f5;
+  color:var(--celeste);
   font-size:10px;
   text-decoration: none;
 }

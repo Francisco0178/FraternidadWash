@@ -63,12 +63,21 @@
   padding-top: 10px;
 }
 */
+:root {
+  --azul:#0071bc;
+  --celeste: #3fa9f5;
+  --verde:#7ac943;
+  --rojo:#ff1d25;
+  --naranjo:#ff931e;
+  --gris:#bdccd4;
+  --rosado:#ff7bac;
+}
 .publicationsWindow{
   z-index: 9;
   position:relative;
   padding: 0px;
   width: calc(100% - 10px);
-  padding-top: 10px;
+  padding-top: 0px;
 }
 .publicationsWindow .postWindow{
   margin-top: 0;
@@ -80,6 +89,6 @@
   height:50px;
 }
 .publicationsWindow .postWindow .title{
-  color:#3fa9f5;
+  color:var(--celeste);
   font-size: 11px;
 }
