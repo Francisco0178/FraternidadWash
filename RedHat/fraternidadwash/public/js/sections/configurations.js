@@ -91,8 +91,8 @@ function block_fraterno() {
     post({blockedUsers:conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val()},'/updateUser',function(res) {
       user.blockedUsers=conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val();
       alert("Fraterno: " + conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val() + " bloqueado");
-      $(".ffraterno").html(' ');
-      $(".lfraterno").html(' ');
+      $(".ffraterno").val('');
+      $(".lfraterno").val('');
     });
 
 }

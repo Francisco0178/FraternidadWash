@@ -7,38 +7,10 @@
     <hr>
     <div class="cuerpo A">
       <h5>Fraternos Bloqueados</h5>
-      <div class="vacio">Ningún Fraterno Bloqueado</div>
-      <div class="fraternos">
-        <table>
-          <tr>
-              <td>Nombre a desbloqear</td>
-              <td>
-                  <div class="espacio"></div>
-                  <div class="Modif">
-                      <button type="button" onclick="">Desbloquear</button>
-                  </div>
-              </td>
-              <td>
-                  <div class="espacio"></div>
-                  <div class="Cancel">
-                      <button type="button" onclick="">Cancelar</button> 
-                  </div>
-              </td>
-          </tr>
-        </table>
-      </div>
-
+      <div id="ListaBloqueos"></div>
     </div>
     <hr>
-    <div class="footer A">
-       <!--<div class="Cancel">
-          <button type="button" onclick="cerrar()">Cancelar</button> 
-       </div>
-       <div class="espacio"></div>
-       <div class="Modif">
-          <button type="button" onclick="">Desbloquear</button>
-       </div>-->  
-    </div>
+    <div class="footer A"></div>
   </div>
 </div>
 
@@ -183,8 +155,6 @@
     color: black;
 }
 
-
-
 .footer .espacio{
     float: right;
     content: "";
@@ -219,7 +189,49 @@ hr{
 
 <script type="text/javascript">
 
+$(document).ready(function(){
+    var cont = $("#listLockFraterno");
+    var _cuerpo = cont.find("#ListaBloqueos");
+    var _vacio = '<div class="vacio">Ningún Fraterno Bloqueado</div>';
+    var _lleno;
+    if (user.blockedUsers.length == 0) {
+      _cuerpo.html(_vacio);
+    } else{
+      _lleno='<div class="fraternos">' +
+                '<table>' +
+                  '<tr>' +
+                      '<td>'+user.blockedUsers+'</td>' +
+                      '<td>' +
+                          '<div class="espacio"></div>' +
+                          '<div class="Modif">' +
+                              '<button type="button" onclick="desblock_fraterno()">Desbloquear</button>' +
+                          '</div>' +
+                      '</td>' +
+                      '<td>' +
+                          '<div class="espacio"></div>' +
+                          '<div class="Cancel">' +
+                              '<button type="button" onclick="">Cancelar</button>' + 
+                          '</div>' +
+                      '</td>' +
+                  '</tr>' +
+                '</table>' +
+              '</div>';
+      _cuerpo.html(_lleno);
+    };
+});
+
 function cerrar() {
+  modal.hide();
+}
+
+function desblock_fraterno() {
+  var cont = $("#listLockFraterno");
+  var _cuerpo = cont.find("#ListaBloqueos");
+  //var _vacio = '<div class="vacio">Ningún Fraterno Bloqueado</div>';
+  post({blockedUsers:''},'/updateUser',function(res) {
+      user.blockedUsers='';
+  });
+  //_cuerpo.html(_vacio);
   modal.hide();
 }
 
