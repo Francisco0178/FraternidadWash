@@ -210,7 +210,7 @@
 <div class="confListCuatro oculto">
   <div class="titulo">Bloqueos</div>
   <div class="list whiteW">
-    <div class="tabla A">
+    <div class="tabla A" id="general">
       <form action="">
           <table>
             <tr>
@@ -221,10 +221,11 @@
             </tr>
             <tr>
                 <td>Bloquear Fraterno</td>
-                <td><input type="text" name="fraterno" placeholder="Nombre del Fraterno"><br></td>
+                <td><input class="ffraterno" type="text" name="ffraterno" placeholder="Nombre del Fraterno"><br><br>
+                <input class="lfraterno" type="text" name="lfraterno" placeholder="Apellido del Fraterno"><br></td>
                 <td>       
                   <div class="lock">
-                      <button type="button" onclick="lock_fraterno()">Bloquear</button>
+                      <button type="button" onclick="block_fraterno()">Bloquear</button>
                   </div>
                 </td> 
             </tr>
@@ -242,7 +243,8 @@
             </tr>
             <tr>
                 <td>Bloquear Mensajes de</td>
-                <td><input type="text" name="mensajes" placeholder="Nombre del Fraterno"><br></td>
+                <td><input class="fmensajes" type="text" name="fmensajes" placeholder="Nombre del Fraterno"><br><br>
+                <input class="lmensajes" type="text" name="lmensajes" placeholder="Apellido del Fraterno"><br></td>
                 <td>       
                   <div class="lock">
                       <button type="button">Bloquear</button>
@@ -263,7 +265,8 @@
             </tr>
             <tr>
                 <td>Bloquear Etiquetado de</td>
-                <td><input type="text" name="etiquetar" placeholder="Nombre del Fraterno"><br></td>
+                <td><input class="fetiquetar" type="text" name="fetiquetar" placeholder="Nombre del Fraterno"><br><br>
+                <input class="letiquetar" type="text" name="letiquetar" placeholder="Apellido del Fraterno"><br></td>
                 <td>       
                   <div class="lock">
                       <button type="button">Bloquear</button>
@@ -284,7 +287,8 @@
             </tr>
             <tr>
                 <td>Bloquear Invitaciones de</td>
-                <td><input type="text" name="invitacion" placeholder="Nombre del Fraterno"><br></td>
+                <td><input class="finvitacion" type="text" name="finvitacion" placeholder="Nombre del Fraterno"><br><br>
+                <input class="linvitacion" type="text" name="linvitacion" placeholder="Apellido del Fraterno"><br></td>
                 <td>       
                   <div class="lock">
                       <button type="button">Bloquear</button>
@@ -305,7 +309,8 @@
             </tr>
             <tr>
                 <td>Bloquear Publicaciones de</td>
-                <td><input type="text" name="publicacion" placeholder="Nombre del Fraterno"><br></td>
+                <td><input class="fpublicacion" type="text" name="fpublicacion" placeholder="Nombre del Fraterno"><br><br>
+                <input class="lpublicacion" type="text" name="lpublicacion" placeholder="Apellido del Fraterno"><br></td>
                 <td>       
                   <div class="lock">
                       <button type="button">Bloquear</button>

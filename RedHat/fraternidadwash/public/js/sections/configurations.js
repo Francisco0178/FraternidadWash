@@ -25,11 +25,9 @@ function showConfigurationsSection() {
     $('.oculto').hide();
     $('.confListCinco').show();
   });
-
-  //Modales de la seccion de datos personales
-
-
 }
+
+//Modales de la seccion de datos personales
 
 function modal_nombre() {
   loadModal('nameChange');
@@ -74,10 +72,27 @@ function list_publications() {
   loadModal('listLockPublication');
 }
 
+//Modales de codificacion de contraseñas
+
 function passcod(pass) {
   var html = "*";
   for (var i = 1; i < pass.length; i++) {
     html += "*";
   }
   $('#npass').html(html);
+}
+
+// Bloqueos Fraternos
+
+function block_fraterno() {
+    var conf = $("#general");
+    var _name = conf.find(".ffraterno");
+    var _ap = conf.find(".lfraterno");
+    post({blockedUsers:conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val()},'/updateUser',function(res) {
+      user.blockedUsers=conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val();
+      alert("Fraterno: " + conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val() + " bloqueado");
+      $(".ffraterno").html(' ');
+      $(".lfraterno").html(' ');
+    });
+
 }
