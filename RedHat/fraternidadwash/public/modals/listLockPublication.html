@@ -7,18 +7,10 @@
     <hr>
     <div class="cuerpo A">
       <h5>Fraternos cuyas publicaciones no deseas ver</h5>
-      <p>Ningún Fraterno Bloqueado</p>
+      <div id="ListaPublication"></div>
     </div>
     <hr>
-    <div class="footer A">
-       <div class="Cancel">
-          <button type="button" onclick="cerrar()">Cancelar</button> 
-       </div>
-       <div class="espacio"></div>
-       <div class="Modif">
-          <button type="button" onclick="">Desbloquear</button>
-       </div>  
-    </div>
+    <div class="footer A"></div>
   </div>
 </div>
 
@@ -105,23 +97,24 @@
     color: #3fa9f5;
 }
 
-/* Pie de pagina del modal*/
-.footer {
-    padding: 2px 16px;
-    padding-top: 15px;
-    padding-bottom: 25px;
-    border-radius: 0px 0px 15px 15px;
-    height: 20px;
-    /*background-color: #5cb85c;*/
-    color: black;
+.cuerpo td{
+    text-align: left;
+    padding: 8px;
+    width:50px;
+    
 }
 
-.footer button{
+.cuerpo td:nth-child(1){
+    padding-left: 1px;
+    width: 280px;
+}
+
+.cuerpo button{
   float: right;
   border-radius: 8px;
 }
 
-.footer .Modif button{
+.cuerpo .Modif button{
   background-color: #3fa9f5;
   border: none;
   color: white;
@@ -132,11 +125,11 @@
   font-size: 14px;
 }
 
-.footer .Modif button:hover{
+.cuerpo.Modif button:hover{
   opacity: 0.7;
 }
 
-.footer .Cancel button{
+.cuerpo .Cancel button{
   background-color: white;
   border: 1px solid #E6E6E6;
   color: black;
@@ -147,8 +140,19 @@
   font-size: 14px;
 }
 
-.footer .Cancel button:hover{
+.cuerpo .Cancel button:hover{
   opacity: 0.7;
+}
+
+/* Pie de pagina del modal*/
+.footer {
+    padding: 2px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 0px 15px 15px;
+    height: 10px;
+    /*background-color: #5cb85c;*/
+    color: black;
 }
 
 .footer .espacio{
@@ -185,7 +189,47 @@ hr{
 
 <script type="text/javascript">
 
+$(document).ready(function(){
+    var cont = $("#listLockPublication");
+    var _cuerpo = cont.find("#ListaPublication");
+    var _vacio = '<div class="vacio">Ningún Fraterno Bloqueado</div>';
+    var _lleno;
+    if (user.blockedPub.length == 0) {
+      _cuerpo.html(_vacio);
+    } else{
+      _lleno='<div class="fraternos">' +
+                '<table>' +
+                  '<tr>' +
+                      '<td>'+user.blockedPub+'</td>' +
+                      '<td>' +
+                          '<div class="espacio"></div>' +
+                          '<div class="Modif">' +
+                              '<button type="button" onclick="desblock_pub()">Desbloquear</button>' +
+                          '</div>' +
+                      '</td>' +
+                      '<td>' +
+                          '<div class="espacio"></div>' +
+                          '<div class="Cancel">' +
+                              '<button type="button" onclick="">Cancelar</button>' + 
+                          '</div>' +
+                      '</td>' +
+                  '</tr>' +
+                '</table>' +
+              '</div>';
+      _cuerpo.html(_lleno);
+    };
+});
+
 function cerrar() {
+  modal.hide();
+}
+
+function desblock_pub() {
+  var cont = $("#listLockPublication");
+  var _cuerpo = cont.find("#ListaPublication");
+  post({blockedPub:''},'/updateUser',function(res) {
+      user.blockedPub='';
+  });
   modal.hide();
 }
 
