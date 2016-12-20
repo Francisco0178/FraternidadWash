@@ -221,8 +221,7 @@
             </tr>
             <tr>
                 <td>Bloquear Fraterno</td>
-                <td><input class="ffraterno" type="text" name="ffraterno" placeholder="Nombre del Fraterno"><br><br>
-                <input class="lfraterno" type="text" name="lfraterno" placeholder="Apellido del Fraterno"><br></td>
+                <td><input class="ffraterno" type="text" name="ffraterno" placeholder="Nombre del Fraterno"><br></td>
                 <td>       
                   <div class="lock">
                       <button type="button" onclick="block_fraterno()">Bloquear</button>
@@ -314,6 +313,28 @@
                 <td>       
                   <div class="lock">
                       <button type="button" onclick="block_pub()">Bloquear</button>
+                  </div>
+                </td> 
+            </tr>
+          </table>
+      </form>
+    </div>
+    <div class="tabla B" id="bpreg">
+      <form action="">
+          <table>
+            <tr>
+                <td rowspan="2">Bloquear Preguntas:</td>
+                <td colspan="3">
+                    Al bloquear las preguntas de una persona, el ya mencionado fraterno no podrá seguirte para poder preguntarte nada.<a href="#" onclick="list_questions()">Ver Fraternos Bloqueados</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Bloquear Preguntas de</td>
+                <td><input class="fpregunta" type="text" name="fpregunta" placeholder="Nombre del Fraterno"><br><br>
+                <input class="lpregunta" type="text" name="lpregunta" placeholder="Apellido del Fraterno"><br></td>
+                <td>       
+                  <div class="lock">
+                      <button type="button" onclick="block_preg()">Bloquear</button>
                   </div>
                 </td> 
             </tr>

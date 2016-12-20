@@ -1,13 +1,13 @@
-<div id="listLockFraterno" class="modal">
+<div id="listLockQuestion" class="modal">
   <div class="contenido">
     <div class="header A">
       <span class="close" onclick="cerrar()">&times;</span>
-      <h3>Lista de Fraternos Bloqueados</h3>
+      <h3>Lista de Fraternos Bloqueados (Preguntas)</h3>
     </div>
     <hr>
     <div class="cuerpo A">
       <h5>Fraternos Bloqueados</h5>
-      <div id="ListaBloqueos"></div>
+      <div id="ListaPreguntas"></div>
     </div>
     <hr>
     <div class="footer A"></div>
@@ -190,36 +190,32 @@ hr{
 <script type="text/javascript">
 
 $(document).ready(function(){
-    var cont = $("#listLockFraterno");
-    var _cuerpo = cont.find("#ListaBloqueos");
+    var cont = $("#listLockQuestion");
+    var _cuerpo = cont.find("#ListaPreguntas");
     var _vacio = '<div class="vacio">Ningún Fraterno Bloqueado</div>';
-    var _lleno = '';
-    if (user.blockedUsers.length == 0) {
+    var _lleno;
+    if (user.blockedQuestions.length == 0) {
       _cuerpo.html(_vacio);
     } else{
-      getUsersFromID(user.blockedUsers,null,function (frat) {
-        for (var usr in frat) {
-          _lleno+='<div class="fraternos" id="'+frat[usr]._id+'">' +
-                  '<table>' +
-                    '<tr>' +
-                        '<td>'+frat[usr].fname + ' ' +frat[usr].lname+'</td>' +
-                        '<td>' +
-                            '<div class="espacio"></div>' +
-                            '<div class="Modif">' +
-                                '<button type="button" onclick="desblock_fraterno('+frat[usr]._id+')">Desbloquear</button>' +
-                            '</div>' +
-                        '</td>' +
-                        '<td>' +
-                            '<div class="espacio"></div>' +
-                            '<div class="Cancel">' +
-                                '<button type="button" onclick="cerrar()">Cancelar</button>' + 
-                            '</div>' +
-                        '</td>' +
-                    '</tr>' +
-                  '</table>' +
-                '</div>';
-        };
-      })
+      _lleno='<div class="fraternos">' +
+                '<table>' +
+                  '<tr>' +
+                      '<td>'+user.blockedQuestions+'</td>' +
+                      '<td>' +
+                          '<div class="espacio"></div>' +
+                          '<div class="Modif">' +
+                              '<button type="button" onclick="desblock_preguntas()">Desbloquear</button>' +
+                          '</div>' +
+                      '</td>' +
+                      '<td>' +
+                          '<div class="espacio"></div>' +
+                          '<div class="Cancel">' +
+                              '<button type="button" onclick="">Cancelar</button>' + 
+                          '</div>' +
+                      '</td>' +
+                  '</tr>' +
+                '</table>' +
+              '</div>';
       _cuerpo.html(_lleno);
     };
 });
@@ -228,12 +224,14 @@ function cerrar() {
   modal.hide();
 }
 
-function desblock_fraterno(id) {
-  for (var i = 0; i < user.blockedUsers.length; i++) {
-    if (user.blockedUsers[i] == id) {
-        user.blockedUsers.splice(i, 1);
-    } 
-  }
+function desblock_preguntas() {
+  var cont = $("#listLockQuestion");
+  var _cuerpo = cont.find("#ListaPreguntas");
+  //var _vacio = '<div class="vacio">Ningún Fraterno Bloqueado</div>';
+  post({blockedQuestions:''},'/updateUser',function(res) {
+      user.blockedQuestions='';
+  });
+  //_cuerpo.html(_vacio);
   modal.hide();
 }
 

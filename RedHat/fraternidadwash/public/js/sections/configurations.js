@@ -20,12 +20,29 @@ function showConfigurationsSection() {
   $('#bloqueos').click(function() {
     $('.oculto').hide();
     $('.confListCuatro').show();
+    $('#bmsg').hide();
+    $('#labels').hide();
+    $('#invs').hide();
+    $('#bpub').hide();
+    $('#bpreg').hide();
   });
   $('#notificaciones').click(function() {
     $('.oculto').hide();
     $('.confListCinco').show();
   });
+
+  /*$('.ffraterno').change(function() {
+    post($('.ffraterno').val(),'/searchUsers',function(req) {
+      console.log(req);
+    });
+  });*/
 }
+
+
+
+//Ocultar bloqueos
+
+
 
 //Modales de la seccion de datos personales
 
@@ -71,6 +88,9 @@ function list_invitation() {
 function list_publications() {
   loadModal('listLockPublication');
 }
+function list_questions() {
+  loadModal('listLockQuestion');
+}
 
 //Modales de codificacion de contraseñas
 
@@ -89,14 +109,11 @@ function passcod(pass) {
 function block_fraterno() {
     var conf = $("#general");
     var _name = conf.find(".ffraterno");
-    var _ap = conf.find(".lfraterno");
-    post({blockedUsers:conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val()},'/updateUser',function(res) {
-      user.blockedUsers=conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val();
-      alert("Fraterno: " + conf.find(".ffraterno").val() + ' ' + conf.find(".lfraterno").val() + " bloqueado");
-      $(".ffraterno").val('');
-      $(".lfraterno").val('');
+    _name.on("change",function() {
+      post(_name.val(),'/searchUsers',function(req) {
+        console.log(req);
+      });
     });
-
 }
 
 //2) Bloquear a los fraternos para que inviten a uno para los eventos
@@ -155,6 +172,21 @@ function block_pub() {
       alert("Fraterno: " + conf.find(".fpublicacion").val() + ' ' + conf.find(".lpublicacion").val() + " bloqueado para ver sus publicaciones");
       $(".fpublicacion").val('');
       $(".lpublicacion").val('');
+    });
+
+}
+
+//6) Bloquear a los fraternos para que no me lleguen las preguntas
+
+function block_preg() {
+    var conf = $("#bpreg");
+    var _name = conf.find(".fpregunta");
+    var _ap = conf.find(".lpregunta");
+    post({blockedPub:conf.find(".fpregunta").val() + ' ' + conf.find(".lpregunta").val()},'/updateUser',function(res) {
+      user.blockedPub=conf.find(".fpregunta").val() + ' ' + conf.find(".lpregunta").val();
+      alert("Fraterno: " + conf.find(".fpregunta").val() + ' ' + conf.find(".lpregunta").val() + " bloqueado para que me pregunten");
+      $(".fpregunta").val('');
+      $(".lpregunta").val('');
     });
 
 }

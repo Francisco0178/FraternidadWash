@@ -98,6 +98,17 @@ MongoClient.connect(mongoURL, function(err, db) {
       }
     });
   });
+  
+  //Bloquear otros usuarios
+  app.post('/blockUser', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$push:{blockedUsers:{$each:req.body}}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
 
   //Registro Inicial
   app.post('/register', function (req, res) {
@@ -140,10 +151,6 @@ MongoClient.connect(mongoURL, function(err, db) {
           following:[],
           blockedBy:[],
 		  blockedUsers:[],
-		  blockedMsg:[],
-		  blockedLabel:[],
-		  blockedInv:[],
-		  blockedPub:[],
           chats:[],
           photos:[],
           events:[],
