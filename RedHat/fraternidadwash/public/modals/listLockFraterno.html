@@ -194,7 +194,7 @@ $(document).ready(function(){
     var _cuerpo = cont.find("#ListaBloqueos");
     var _vacio = '<div class="vacio">Ningún Fraterno Bloqueado</div>';
     var _lleno = '';
-    if (user.blockedUsers.length == 0) {
+    if (user.blockedUsers.length == 0 || user.blockedUsers == undefined) {
       _cuerpo.html(_vacio);
     } else{
       getUsersFromID(user.blockedUsers,null,function (frat) {
@@ -206,7 +206,7 @@ $(document).ready(function(){
                         '<td>' +
                             '<div class="espacio"></div>' +
                             '<div class="Modif">' +
-                                '<button type="button" onclick="desblock_fraterno('+frat[usr]._id+')">Desbloquear</button>' +
+                                '<button type="button" onclick="desblock_fraterno('+usr+')">Desbloquear</button>' +
                             '</div>' +
                         '</td>' +
                         '<td>' +
@@ -229,11 +229,13 @@ function cerrar() {
 }
 
 function desblock_fraterno(id) {
+  var bloqueado;
   for (var i = 0; i < user.blockedUsers.length; i++) {
-    if (user.blockedUsers[i] == id) {
+    if (i == id) {
         user.blockedUsers.splice(i, 1);
     } 
   }
+  alert('Fraterno desbloqueado');
   modal.hide();
 }
 

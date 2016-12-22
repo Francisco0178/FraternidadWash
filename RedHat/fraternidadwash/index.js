@@ -150,7 +150,7 @@ MongoClient.connect(mongoURL, function(err, db) {
           followers:[],
           following:[],
           blockedBy:[],
-		  blockedUsers:[],
+          blockedUsers:[],
           chats:[],
           photos:[],
           events:[],
