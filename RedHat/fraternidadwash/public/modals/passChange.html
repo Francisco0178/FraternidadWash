@@ -9,7 +9,7 @@
       <h5>Contraseña</h5>
       <p>
         <input class="acont" type="text" name="contant" placeholder="Ingresa Contraseña Actual">
-        <a href="#">¿Olvidaste tu Contraseña?</a>
+        <!--<a href="#">¿Olvidaste tu Contraseña?</a>-->
       </p>
       <p><input class="ncont" type="text" name="contnueva" placeholder="Ingresa Contraseña Nueva"></p>
       <p><input class="rcont" type="text" name="contrep" placeholder="Repite Contraseña Nueva"></p>
@@ -214,14 +214,15 @@ $(document).ready(function(){
 });
 
 function nuevo_pass() {
-
-  post({pass:modal.find('.ncont').val()},'/updateUser',function(res) {
+  if ($('.ncont').val() == $('.rcont').val()) {
+    post({pass:modal.find('.ncont').val()},'/updateUser',function(res) {
       user.pass=modal.find('.ncont').val();
-      //$('#npass').html(user.pass);
       codif(user.pass);
-  });
-
-  modal.hide();
+    });
+      modal.hide();
+  } else{
+    alert('Deben coincidir ambas contraseñas');
+  };
 }
 
 
