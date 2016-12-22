@@ -250,6 +250,14 @@ a:hover{
     font-weight: normal;
 }
 
+.confListCuatro .select {
+    width:230px;
+}
+
+.confListCuatro .selfrat {
+    width:200px;
+}
+
 .confListCuatro td input{
     width:200px;
 }

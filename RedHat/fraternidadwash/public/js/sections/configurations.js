@@ -25,22 +25,31 @@ function showConfigurationsSection() {
     $('#invs').hide();
     $('#bpub').hide();
     $('#bpreg').hide();
+    sel_bloqueos();
   });
   $('#notificaciones').click(function() {
     $('.oculto').hide();
     $('.confListCinco').show();
   });
-
-  /*$('.ffraterno').change(function() {
-    post($('.ffraterno').val(),'/searchUsers',function(req) {
-      console.log(req);
-    });
-  });*/
 }
 
-
-
-//Ocultar bloqueos
+//Mostar Usuarios
+function sel_bloqueos() {
+  var sel = $('.selfrat');
+  var query = {'yearIn':$('#nyear').val()};
+  var lleno;
+  searchUsers(query,function(usrs){
+    var vacio = "<option value='' disabled selected>Nombre del Fraterno a Bloquear</option>";
+    if(usrs.length === 0){
+        sel.html(vacio);
+        return;
+    }
+    for(var usr in usrs){
+      lleno += '<option value="'+usrs[usr]._id+'">'+usrs[usr].fname+ ' ' +usrs[usr].lname+'</option>';
+    }
+    sel.html(lleno);
+  });
+}
 
 
 
