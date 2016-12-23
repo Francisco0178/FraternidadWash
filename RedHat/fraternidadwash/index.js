@@ -110,6 +110,196 @@ MongoClient.connect(mongoURL, function(err, db) {
     });
   });
 
+  //Permitir etiquetar en fotos
+  app.post('/allowLabel', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowLabel:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //Prohibir etiquetar en fotos
+  app.post('/forbidLabel', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowLabel:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Permitir recuperacion por contrasena
+  app.post('/allowPass', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowPass:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Permitir recuperacion por contrasena
+  app.post('/forbidPass', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowPass:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Permitir encontrar a uno por nombre
+  app.post('/allowName', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowName:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Permitir encontrar a uno por nombre
+  app.post('/forbidName', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowName:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Permitir encontrar a uno por carrera
+  app.post('/allowCareer', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowCareer:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Permitir encontrar a uno por carrera
+  app.post('/forbidCareer', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{allowCareer:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Mostrar fotos a fraternos
+  app.post('/showPhotos', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showPhotos:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Mostrar fotos a fraternos
+  app.post('/forbidPhotos', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showPhotos:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Mostrar documentos a fraternos
+  app.post('/showDocs', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showDocs:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Mostrar documentos a fraternos
+  app.post('/forbidDocs', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showDocs:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Mostrar publicaciones a fraternos
+  app.post('/showPubs', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showPubs:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Mostrar publicaciones a fraternos
+  app.post('/forbidPubs', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showPubs:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+
+  //Mostrar preguntas a fraternos
+  app.post('/showAnswers', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showAnswers:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //Mostrar preguntas a fraternos
+  app.post('/forbidAnswers', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showAnswers:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Mostrar anuncios a fraternos
+  app.post('/showAds', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showAds:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Mostrar anuncios a fraternos
+  app.post('/forbidAds', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{showAds:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
   //Registro Inicial
   app.post('/register', function (req, res) {
 
@@ -151,6 +341,15 @@ MongoClient.connect(mongoURL, function(err, db) {
           following:[],
           blockedBy:[],
           blockedUsers:[],
+          allowLabel:false,
+          allowPass:false,
+          allowName:false,
+          allowCareer:false,
+          showPhotos:false,
+          showDocs:false,
+          showPubs:false,
+          showAnswers:false,
+          showAds:false,
           chats:[],
           photos:[],
           events:[],
