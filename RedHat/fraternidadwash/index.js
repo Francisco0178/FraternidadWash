@@ -300,6 +300,137 @@ MongoClient.connect(mongoURL, function(err, db) {
     });
   });
 
+
+
+  //Reproducir sonido de publicaciones
+  app.post('/soundPubs', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{soundPubs:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Reproducir sonido de publicaciones
+  app.post('/forbidSoundPubs', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{soundPubs:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Reproducir sonido de mensajes
+  app.post('/soundMsg', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{soundMsg:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No Reproducir sonido de publicaciones
+  app.post('/forbidSoundMsg', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{soundMsg:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Notificaciones al correo electronico
+  app.post('/notMail', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notMail:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No permitir notificaciones al correo electronico
+  app.post('/forbidNotMail', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notMail:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Notificaciones de etiquetado
+  app.post('/notLabel', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notLabel:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No permitir notificaciones de etiquetado
+  app.post('/forbidNotLabel', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notLabel:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Notificaciones de eventos
+  app.post('/notEvent', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notEvent:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No permitir notificaciones de eventos
+  app.post('/forbidNotEvent', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notEvent:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+  //Notificaciones de preguntas
+  app.post('/notAnswer', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notAnswer:true}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+  //No permitir notificaciones de preguntas
+  app.post('/forbidNotAnswer', function (req, res) {
+    isLogged(req.cookies,res,function(ans){
+      if(ans != false){
+        usersDB.update({email:ans.email,pass:ans.pass},{$set:{notAnswer:false}},function(err,data){
+          res.send();
+        });
+      }
+    });
+  });
+
+
+
+
   //Registro Inicial
   app.post('/register', function (req, res) {
 
@@ -350,6 +481,12 @@ MongoClient.connect(mongoURL, function(err, db) {
           showPubs:false,
           showAnswers:false,
           showAds:false,
+          soundPubs:false,
+          soundMsg:false,
+          notMail:false,
+          notLabel:false,
+          notEvent:false,
+          notAnswer:false,
           chats:[],
           photos:[],
           events:[],

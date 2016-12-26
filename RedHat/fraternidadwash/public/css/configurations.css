@@ -37,6 +37,7 @@ a:hover{
   padding: 0px;
   width: calc(100% - 10px);
   padding-top: 0px;
+  
 }
 .confWindow .postWindow{
   margin-top: 0;
@@ -45,17 +46,21 @@ a:hover{
   padding:10px;
 }
 
+/*Contenedor principal: conf*/
+.conf{
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+
+  flex-direction: row;
+  justify-content:space-around;
+
+}
+
 /*Primera Lista: Menu*/
 
 .confList{
-  display:none;
-  /*width:calc(100% - 10px);*/
   width: 200px;
-  flex-direction: row;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  float:left;
 }
 
 .confWindow .postWindow .title{
@@ -95,14 +100,7 @@ a:hover{
 /*Segunda Lista: Datos Personales*/
 
 .confListDos{
-  display:none;
-  /*width:calc(100% - 10px);*/
   width: 600px;
-  flex-direction: row;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  float:right;
 }
 
 .confListDos .titulo{
@@ -144,14 +142,7 @@ a:hover{
 /*Tercera Lista: Privacidad*/
 
 .confListTres{
-  display:none;
-  /*width:calc(100% - 10px);*/
   width: 600px;
-  flex-direction: row;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  float:right;
   display: none;
   padding-bottom: 30px;
 }
@@ -204,14 +195,7 @@ a:hover{
 /*Cuarta Lista: Bloqueos*/
 
 .confListCuatro{
-  display:none;
-  /*width:calc(100% - 10px);*/
   width: 600px;
-  flex-direction: row;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  float:right;
   padding-bottom: 30px;
   display: none;
 }
@@ -291,14 +275,7 @@ a:hover{
 /*Quinta Lista: Notificaciones*/
 
 .confListCinco{
-  display:none;
-  /*width:calc(100% - 10px);*/
   width: 600px;
-  flex-direction: row;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  float:right;
   display: none;
 }
 
