@@ -33,6 +33,13 @@ function showConfigurationsSection() {
   });
 }
 
+$("#etiquetar").on("click", function() {
+  post({allowLabel:true},'/updateUser',function(res) {
+    user.allowLabel=true;
+    alert("cambiado a true");
+  });
+});
+
 //Mostar Usuarios
 function sel_bloqueos() {
   var sel = $('.selfrat');
