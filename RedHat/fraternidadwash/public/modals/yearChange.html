@@ -202,10 +202,14 @@ $(document).ready(function(){
 });
 
 function nuevo_ingreso() {
+  /*
   post({yearIn:modal.find('.anioIn').val()},'/updateUser',function(res) {
       user.city=modal.find('.anioIn').val();
       $('#nyear').html(user.city);
   });
+  */
+  send("yearInChange",{yearIn:modal.find('.anioIn').val()});
+  $('#nyear').html(modal.find('.anioIn').val());
   modal.hide();
 }
 

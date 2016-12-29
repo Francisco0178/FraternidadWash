@@ -73,18 +73,18 @@
       <div class="tabla A">
           <table>
             <tr>
-                <td>Carrera:</td>
-                <td id="ncareer"></td>
-                <td><a href="#" onclick="modal_carrera()">Editar</a></td>
+                <td>Ciudad:</td>
+                <td id="ncity"></td>
+                <td><a href="#" onclick="modal_ciudad()">Editar</a></td>
             </tr>
           </table>
       </div>
       <div class="tabla B">
           <table>
             <tr>
-                <td>Ciudad:</td>
-                <td id="ncity"></td>
-                <td><a href="#" onclick="modal_ciudad()">Editar</a></td>
+                <td>Carrera:</td>
+                <td id="ncareer"></td>
+                <td><a href="#" onclick="modal_carrera()">Editar</a></td>
             </tr>
           </table>
       </div>
@@ -134,7 +134,7 @@
             </table>
         </form>
       </div>
-      <div class="tabla B">
+      <div class="tabla B" id="np">
         <form action="">
             <table>
               <tr>
@@ -153,7 +153,7 @@
             </table>
         </form>
       </div>
-      <div class="tabla A">
+      <div class="tabla A" id="nvis">
         <form action="">
             <table>
               <tr>
@@ -202,7 +202,7 @@
             </table>
         </form>
       </div>
-      <div class="tabla A">
+      <div class="tabla A" id="nmsc">
         <form action="">
             <table>
               <tr>
@@ -242,16 +242,17 @@
               <tr>
                   <td>Bloquear Fraterno</td>
                   <td>
-                    <div class="select">
-                      <select class="selfrat"></select>
+                    <div class="usblock">
+                      <input class="usrblock" type="text" name="fetiquetar" placeholder="Nombre del Fraterno">
+                      <div id="listalock"></div>
                     </div>
                   </td>
                   <!--<td><input class="ffraterno" type="text" name="ffraterno" placeholder="Nombre del Fraterno"><br></td>-->
-                  <td>       
+                  <!--<td>       
                     <div class="lock">
                         <button type="button" onclick="block_fraterno()">Bloquear</button>
                     </div>
-                  </td> 
+                  </td> -->
               </tr>
             </table>
         </form>

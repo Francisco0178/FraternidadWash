@@ -215,11 +215,15 @@ $(document).ready(function(){
 
 function nuevo_pass() {
   if ($('.ncont').val() == $('.rcont').val()) {
+    /*
     post({pass:modal.find('.ncont').val()},'/updateUser',function(res) {
       user.pass=modal.find('.ncont').val();
       codif(user.pass);
     });
-      modal.hide();
+    */
+    send("passChange",{pass:$('.ncont').val()});
+    codif($('.ncont').val());
+    modal.hide();
   } else{
     alert('Deben coincidir ambas contraseñas');
   };

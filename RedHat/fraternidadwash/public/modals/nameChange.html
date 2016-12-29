@@ -202,6 +202,7 @@ function nuevo_nombre() {
   //var nuevo = $('.nnombre').text();
 
   //$('#nname').val(nuevo);
+  /*
   post({fname:modal.find('.nnombre').val()},'/updateUser',function(res) {
       user.fname=modal.find('.nnombre').val();
   });
@@ -209,6 +210,9 @@ function nuevo_nombre() {
       user.lname=modal.find('.napellido').val();
       $('#nname').html(user.fname + ' ' + user.lname);
   });
+*/
+  send("nameChange",{fname:modal.find('.nnombre').val(),lname:modal.find('.napellido').val()});
+  $('#nname').html(modal.find('.nnombre').val() + ' ' + modal.find('.napellido').val());
 
   modal.hide();
 }

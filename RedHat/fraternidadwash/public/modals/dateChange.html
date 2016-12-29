@@ -220,24 +220,54 @@ $(document).ready(function(){
 
 function nuevo_nacimiento() {
   if(modal.find('.day').val() < 10){
+    /*
       post({birthdate:modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+'0'+modal.find('.day').val()},'/updateUser',function(res) {
         user.birthdate=modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+'0'+modal.find('.day').val();
         $('#ndate').html(user.birthdate);
       });
+    */
+      send("dateChange",{
+        birthdate:modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+'0'+
+        modal.find('.day').val()
+      });
+
+      $('#ndate').html(modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+'0'+
+        modal.find('.day').val());
+
       modal.hide();
 
   }else if(modal.find('.month').val() < 10){
+    /*
       post({birthdate:modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+modal.find('.day').val()},'/updateUser',function(res) {
         user.birthdate=modal.find('.year').val()+'-'+'0'+modal.find('.month').val()+'-'+modal.find('.day').val();
         $('#ndate').html(user.birthdate);
       });
+    */
+      send("dateChange",{
+        birthdate:modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+modal.find('.day').val()
+      });
+
+      $('#ndate').html(modal.find('.year').val()+'-'+'0'+
+        modal.find('.month').val()+'-'+modal.find('.day').val()); 
+
       modal.hide();
 
   }else{
+    /*
       post({birthdate:modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val()},'/updateUser',function(res) {
         user.birthdate=modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val();
         $('#ndate').html(user.birthdate);
       });
+    */
+      send("dateChange",{
+        birthdate:modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val()
+      });
+      
+      $('#ndate').html(modal.find('.year').val()+'-'+modal.find('.month').val()+'-'+modal.find('.day').val()); 
+
       modal.hide();
   }
 

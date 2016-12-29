@@ -200,6 +200,10 @@ a:hover{
   display: none;
 }
 
+.confListCuatro .whiteW{
+  overflow: visible;
+}
+
 .confListCuatro a{
   font-weight: bold;
 }
@@ -327,4 +331,31 @@ a:hover{
 
 #not{
   font-weight: normal;
+}
+
+/*Lista de bloqueos*/
+
+.usblock{
+  position: relative;
+}
+
+.usrblock{
+  width:200px;
+
+
+}
+
+#listalock{
+  width:200px;
+  height: 300px;
+  overflow-y:scroll;
+  background-color: white;
+  position: absolute;
+  display: none;
+  
+
+}
+
+#listalock div{
+  cursor: pointer;
 }

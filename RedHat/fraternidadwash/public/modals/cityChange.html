@@ -201,10 +201,14 @@ $(document).ready(function(){
 });
 
 function nueva_ciudad() {
+  /*
   post({city:modal.find('.nciudad').val()},'/updateUser',function(res) {
       user.city=modal.find('.nciudad').val();
       $('#ncity').html(user.city);
   });
+  */
+  send("cityChange",{city:modal.find('.nciudad').val()});
+  $('#ncity').html(modal.find('.nciudad').val());
   modal.hide();
 }
 

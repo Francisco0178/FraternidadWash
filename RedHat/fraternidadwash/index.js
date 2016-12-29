@@ -1153,6 +1153,151 @@ MongoClient.connect(mongoURL, function(err, db) {
     });
   });
 
+  //Parte de Jose: cambio de nombre
+  socket.on('nameChange', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{fname:msg.data.fname,lname:msg.data.lname}},function(err,data){
+           io.sockets.emit('nameChange', {id:ans._id, fname:msg.data.fname, lname:msg.data.lname});
+           console.log('cambio nombre');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose: cambio de contraseña
+  socket.on('passChange', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{pass:msg.data.pass}},function(err,data){
+           io.sockets.emit('passChange', {id:ans._id, pass:msg.data.pass});
+           console.log('cambio pass');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose: cambio de carrera
+  socket.on('careerChange', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{career:msg.data.career}},function(err,data){
+           io.sockets.emit('careerChange', {id:ans._id, career:msg.data.career});
+           console.log('cambio carrera');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose: cambio de ciudad
+  socket.on('cityChange', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{city:msg.data.city}},function(err,data){
+           io.sockets.emit('cityChange', {id:ans._id, city:msg.data.city});
+           console.log('cambio ciudad');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose: cambio de año de ingreso
+  socket.on('yearInChange', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{yearIn:msg.data.yearIn}},function(err,data){
+           io.sockets.emit('yearInChange', {id:ans._id, yearIn:msg.data.yearIn});
+           console.log('cambio año de ingreso');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose: cambio de fecha de nacimiento
+  socket.on('dateChange', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{birthdate:msg.data.birthdate}},function(err,data){
+           io.sockets.emit('dateChange', {id:ans._id, birthdate:msg.data.birthdate});
+           console.log('cambio fecha de nacimiento');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Privacidad: permitir o no etiquetar en fotos
+  socket.on('allowLabel', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{allowLabel:msg.data.allowLabel}},function(err,data){
+           io.sockets.emit('allowLabel', {id:ans._id, allowLabel:msg.data.allowLabel});
+           console.log('cambio de etiquetado fotos');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Privacidad: mostrar o no fotos a los fraternos
+  socket.on('showPhotos', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{showPhotos:msg.data.showPhotos}},function(err,data){
+           io.sockets.emit('showPhotos', {id:ans._id, showPhotos:msg.data.showPhotos});
+           console.log('cambio de mostrar fotos');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Privacidad: mostrar o no documentos a los fraternos
+  socket.on('showDocs', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{showDocs:msg.data.showDocs}},function(err,data){
+           io.sockets.emit('showDocs', {id:ans._id, showDocs:msg.data.showDocs});
+           console.log('cambio de mostrar documentos');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Privacidad: mostrar o no publicaciones a los fraternos
+  socket.on('showPubs', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{showPubs:msg.data.showPubs}},function(err,data){
+           io.sockets.emit('showPubs', {id:ans._id, showPubs:msg.data.showPubs});
+           console.log('cambio de mostrar publicaciones');
+       });
+      }
+    });
+  });
+
+
+  //Parte de Jose de Notificaciones: mostrar o no sonidos al recibir publicacion
+  socket.on('soundPubs', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{soundPubs:msg.data.soundPubs}},function(err,data){
+           io.sockets.emit('soundPubs', {id:ans._id, soundPubs:msg.data.soundPubs});
+           console.log('cambio de sonidos en publicaciones');
+       });
+      }
+    });
+  });
+
+
     });
   });
 });

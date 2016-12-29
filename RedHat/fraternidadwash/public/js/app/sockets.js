@@ -219,7 +219,273 @@ function startSockets(){
       });
     });
   });
+
+  //Parte Jose en Sockets
+
+  //cambio nombre sockets
+  io.on('nameChange', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.fname = data.fname;
+      user.lname = data.lname;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.fname = data.fname;
+        currentUser.lname = data.lname;
+        middleBar.find('.fullName').html(data.fname + ' ' +data.lname);
+      }
+    }
+
+
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].fname = data.fname;
+        cachedUsers[data.id].lname = data.lname;
+      }
+    }
+
+  });
+
+  //cambio pass sockets
+  io.on('passChange', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.pass = data.pass;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.pass = data.pass;
+        //middleBar.find('.fullName').html(data.fname + ' ' +data.lname);
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].pass = data.pass;
+      }
+    }
+
+  });
+
+  //cambio carrera sockets
+  io.on('careerChange', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.career = data.career;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.career = data.career;
+        middleBar.find('.career').html(data.career);
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].career = data.career;
+      }
+    }
+
+  });
+
+  //cambio ciudad sockets
+  io.on('cityChange', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.city = data.city;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.city = data.city;
+        middleBar.find('.career').html(data.city);
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].city = data.city;
+      }
+    }
+
+  });
+
+  //cambio año de ingreso
+  io.on('yearInChange', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.yearIn = data.yearIn;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.yearIn = data.yearIn;
+        middleBar.find('.career').html(data.yearIn);
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].yearIn = data.yearIn;
+      }
+    }
+
+  });
+
+  //cambio fecha de nacimiento
+  io.on('dateChange', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.birthdate = data.birthdate;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.birthdate = data.birthdate;
+        middleBar.find('.age').html(data.yearIn);
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].birthdate = data.birthdate;
+      }
+    }
+
+  });
+
+  //Privacidad: permitir etiquetado en fotos
+  io.on('allowLabel', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.allowLabel = data.allowLabel;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.allowLabel = data.allowLabel;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].allowLabel = data.allowLabel;
+      }
+    }
+
+  });
+
+  //Privacidad: mostrar o no fotos a los fraternos
+  io.on('showPhotos', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.showPhotos = data.showPhotos;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.showPhotos = data.showPhotos;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].showPhotos = data.showPhotos;
+      }
+    }
+
+  });
+
+  //Privacidad: mostrar o no documentos a los fraternos
+  io.on('showDocs', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.showDocs = data.showDocs;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.showDocs = data.showDocs;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].showDocs = data.showDocs;
+      }
+    }
+
+  });
+
+  //Privacidad: mostrar o no publicaciones a los fraternos
+  io.on('showPubs', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.showPubs = data.showPubs;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.showPubs = data.showPubs;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].showPubs = data.showPubs;
+      }
+    }
+
+  });
+
+  //Notificaciones: mostrar o no sonidos al recibir publicacion
+  io.on('soundPubs', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.soundPubs = data.soundPubs;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.soundPubs = data.soundPubs;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].soundPubs = data.soundPubs;
+      }
+    }
+
+  });
+
+  //Notificaciones: mostrar o no sonidos al recibir un mensaje del chat
+  io.on('soundMsg', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.soundMsg = data.soundMsg;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.soundMsg = data.soundMsg;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].soundMsg = data.soundMsg;
+      }
+    }
+
+  });
 }
+
 
 
 function send(chanel,data){

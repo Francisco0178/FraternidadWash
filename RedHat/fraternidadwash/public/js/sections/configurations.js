@@ -16,6 +16,9 @@ function showConfigurationsSection() {
   $('#privacidad').click(function() {
     $('.oculto').hide();
     $('.confListTres').show();
+    $('#np').hide();
+    $('#nvis').hide();
+    $('#nmsc').hide();
   });
   $('#bloqueos').click(function() {
     $('.oculto').hide();
@@ -44,18 +47,24 @@ function showConfigurationsSection() {
 
   $("#etiquetaruno").on("click", function() {
     $("#noetiquetaruno").prop("checked", false );
+    /*
     post({allowLabel:true},'/updateUser',function(res) {
       user.allowLabel=true;
     });
+    */
+    send("allowLabel",{allowLabel:true});
   });
 
   //no permitir etiquetado en fotos
 
   $("#noetiquetaruno").on("click", function() {
     $("#etiquetaruno").prop("checked", false );
+    /*
     post({allowLabel:false},'/updateUser',function(res) {
       user.allowLabel=false;
     });
+    */
+    send("allowLabel",{allowLabel:false});
   });
 
 
@@ -137,13 +146,19 @@ function showConfigurationsSection() {
 
   $("#showfotosuno").on("click", function() {
     if ($("#showfotosuno").is(":checked")) {
+      /*
       post({showPhotos:true},'/updateUser',function(res) {
         user.showPhotos=true;
       });
+      */
+      send("showPhotos",{showPhotos:true});
     } else {
+      /*
       post({showPhotos:false},'/updateUser',function(res) {
         user.showPhotos=false;
       });
+      */
+      send("showPhotos",{showPhotos:false});
     }
   });
 
@@ -159,13 +174,19 @@ function showConfigurationsSection() {
 
   $("#showdocumentosuno").on("click", function() {
     if ($("#showdocumentosuno").is(":checked")) {
+      /*
       post({showDocs:true},'/updateUser',function(res) {
         user.showDocs=true;
       });
+      */
+      send("showDocs",{showDocs:true});
     } else {
+      /*
       post({showDocs:false},'/updateUser',function(res) {
         user.showDocs=false;
       });
+      */
+      send("showDocs",{showDocs:false});
     }
   });
 
@@ -181,13 +202,19 @@ function showConfigurationsSection() {
 
   $("#showpubuno").on("click", function() {
     if ($("#showpubuno").is(":checked")) {
+      /*
       post({showPubs:true},'/updateUser',function(res) {
         user.showPubs=true;
       });
+      */
+      send("showPubs",{showPubs:true});
     } else {
+      /*
       post({showPubs:false},'/updateUser',function(res) {
         user.showPubs=false;
       });
+      */
+      send("showPubs",{showPubs:false});
     }
   });
 
@@ -247,13 +274,19 @@ function showConfigurationsSection() {
 
   $("#soundpubuno").on("click", function() {
     if ($("#soundpubuno").is(":checked")) {
+      /*
       post({soundPubs:true},'/updateUser',function(res) {
         user.soundPubs=true;
       });
+      */
+      send("soundPubs",{soundPubs:true});
     } else {
+      /*
       post({soundPubs:false},'/updateUser',function(res) {
         user.soundPubs=false;
       });
+      */
+      send("soundPubs",{soundPubs:false});
     }
   });
 
@@ -269,13 +302,19 @@ function showConfigurationsSection() {
 
   $("#soundmsguno").on("click", function() {
     if ($("#soundmsguno").is(":checked")) {
+      /*
       post({soundMsg:true},'/updateUser',function(res) {
         user.soundMsg=true;
       });
+      */
+      send("soundMsg",{soundMsg:true});
     } else {
+      /*
       post({soundMsg:false},'/updateUser',function(res) {
         user.soundMsg=false;
       });
+      */
+      send("soundMsg",{soundMsg:false});
     }
   });
 
@@ -291,13 +330,19 @@ function showConfigurationsSection() {
 
   $("#notcorreouno").on("click", function() {
     if ($("#notcorreouno").is(":checked")) {
+      /*
       post({notMail:true},'/updateUser',function(res) {
         user.notMail=true;
       });
+      */
+      send("notMail",{notMail:true});
     } else {
+      /*
       post({notMail:false},'/updateUser',function(res) {
         user.notMail=false;
       });
+      */
+      send("notMail",{notMail:false});
     }
   });
 
@@ -313,13 +358,19 @@ function showConfigurationsSection() {
 
   $("#notlabeluno").on("click", function() {
     if ($("#notlabeluno").is(":checked")) {
+      /*
       post({notLabel:true},'/updateUser',function(res) {
         user.notLabel=true;
       });
+      */
+      send("notLabel",{notLabel:true});
     } else {
+      /*
       post({notLabel:false},'/updateUser',function(res) {
         user.notLabel=false;
       });
+      */
+      send("notLabel",{notLabel:false});
     }
   });
 
@@ -335,13 +386,19 @@ function showConfigurationsSection() {
 
   $("#noteventuno").on("click", function() {
     if ($("#noteventuno").is(":checked")) {
+      /*  
       post({notEvent:true},'/updateUser',function(res) {
         user.notEvent=true;
       });
+      */
+      send("notEvent",{notEvent:true});
     } else {
+      /*
       post({notEvent:false},'/updateUser',function(res) {
         user.notEvent=false;
       });
+      */
+      send("notEvent",{notEvent:false});
     }
   });
 
@@ -357,15 +414,70 @@ function showConfigurationsSection() {
 
   $("#notansweruno").on("click", function() {
     if ($("#notansweruno").is(":checked")) {
+      /*
       post({notAnswer:true},'/updateUser',function(res) {
         user.notAnswer=true;
       });
+      */
+      send("notAnswer",{notAnswer:true});
     } else {
+      /*
       post({notAnswer:false},'/updateUser',function(res) {
         user.notAnswer=false;
       });
+      */
+      send("notAnswer",{notAnswer:false});
     }
   });
+
+  $('#listalock').on("click", "div", function () {
+    alert($(this).attr('userID'));  
+  });
+
+  $('.usrblock').keypress(function() {
+    buscar($(this).val());
+  });
+
+  function buscar(input){
+
+    //Limpiar la lista
+    $('#listalock').empty(); 
+
+    //Si el buscador esta vacío
+    if(input.length == 1){
+      $('#listalock').hide(); 
+      return;
+    }
+
+    //Separa las palabras del input por espacio
+    input = input.split(" ");
+
+    //Se crea un arreglo para crear la busqueda
+    var query = new Array();
+
+    //Por cada palabra se crea una busqueda
+    for(var word in input){
+      query.push( {"fname":{$regex:".*"+input[word]+".*",$options:"i"}});
+      query.push( {"lname":{$regex:".*"+input[word]+".*",$options:"i"}});
+    }
+
+    searchUsers({"$or":query},function(usrs){
+
+      //Si no se encuentra ningun usuario
+      if(usrs.length == 0){
+        $('#listalock').hide();
+        return;
+      }
+      $('#listalock').show();
+      var html = '';
+      for(var usr in usrs){
+        //Aqui se debe imprimir la lista, para acceder a datos usar por ejemplo: usrs[user].fname
+        html += '<div userID="'+usrs[usr]._id+'">'+usrs[usr].fname+ ' '+usrs[usr].lname+'</div>';
+      }
+      $('#listalock').html(html);
+
+    });
+  }
 
 }
 

@@ -201,10 +201,14 @@ $(document).ready(function(){
 });
 
 function nueva_carrera() {
+  /*
   post({career:modal.find('.career').val()},'/updateUser',function(res) {
       user.career=modal.find('.career').val();
       $('#ncareer').html(user.carreras[user.city][user.career]);
   });
+  */
+  send("careerChange",{career:modal.find('.career').val()});
+  $('#ncareer').html(user.carreras[user.city][modal.find('.career').val()]);
   modal.hide();
 }
 
