@@ -431,7 +431,13 @@ function showConfigurationsSection() {
   });
 
   $('#listalock').on("click", "div", function () {
-    alert($(this).attr('userID'));  
+    //alert($(this).attr('userID'));
+    if($(this).attr('userID')==user._id){
+      alert("No se puede bloquear a uno mismo");
+    }else {
+      bloqueoTotal($(this).attr('userID'),$(this).attr('userName'));
+    }
+   
   });
 
   $('.usrblock').keypress(function() {
@@ -472,11 +478,23 @@ function showConfigurationsSection() {
       var html = '';
       for(var usr in usrs){
         //Aqui se debe imprimir la lista, para acceder a datos usar por ejemplo: usrs[user].fname
-        html += '<div userID="'+usrs[usr]._id+'">'+usrs[usr].fname+ ' '+usrs[usr].lname+'</div>';
+        html += '<div userID="'+usrs[usr]._id+'" userName="'+usrs[usr].fname+ ' '+usrs[usr].lname+'">'+usrs[usr].fname+ ' '+usrs[usr].lname+'</div>';
       }
       $('#listalock').html(html);
 
     });
+  }
+
+  function bloqueoTotal (ids, name) {
+    for(var i = 0; i <= user.blockedUsers.length; i++) {
+      if(user.blockedUsers[i] == ids){
+          alert("Fraterno ya fue bloqueado");
+          return;
+      }
+    }
+    send("blockedUsers",{blockedUsers:[ids]});
+    alert(name+" bloqueado");
+
   }
 
 }

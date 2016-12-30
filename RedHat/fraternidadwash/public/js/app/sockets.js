@@ -568,6 +568,27 @@ function startSockets(){
     }
 
   });
+
+  //Notificaciones: mostrar o no notificaciones al ser respondida una pregunta
+  io.on('blockedUsers', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.blockedUsers = data.blockedUsers;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.blockedUsers = data.blockedUsers;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].blockedUsers = data.blockedUsers;
+      }
+    }
+
+  });
 }
 
 

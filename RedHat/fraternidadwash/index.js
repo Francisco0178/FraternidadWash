@@ -1355,7 +1355,21 @@ MongoClient.connect(mongoURL, function(err, db) {
         //validar datos
        usersDB.update({_id:ObjectID(ans._id)},{$set:{notAnswer:msg.data.notAnswer}},function(err,data){
            io.sockets.emit('notAnswer', {id:ans._id, notAnswer:msg.data.notAnswer});
-           console.log('cambio de notificacion de pregunta respondida');
+           console.log('cambio de notificacion de pregunta');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Bloqueos: Son las personas que son bloqueadas
+  socket.on('blockedUsers', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({email:ans.email,pass:ans.pass},{$push:{blockedUsers:{$each:msg.data.blockedUsers}}},function(err,data){
+        //usersDB.update({_id:ObjectID(ans._id)},{$set:{blockedUsers:msg.data.blockedUsers}},function(err,data){
+           io.sockets.emit('blockedUsers', {id:ans._id, blockedUsers:msg.data.blockedUsers});
+           console.log('cambio de insercion de nuevo individuo bloqueado');
        });
       }
     });
