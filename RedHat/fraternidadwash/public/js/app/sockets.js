@@ -484,6 +484,90 @@ function startSockets(){
     }
 
   });
+
+  //Notificaciones: mostrar o no notificaciones al correo
+  io.on('notMail', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.notMail = data.notMail;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.notMail = data.notMail;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].notMail = data.notMail;
+      }
+    }
+
+  });
+
+  //Notificaciones: mostrar o no notificaciones al ser etiquetado
+  io.on('notLabel', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.notLabel = data.notLabel;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.notLabel = data.notLabel;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].notLabel = data.notLabel;
+      }
+    }
+
+  });
+
+  //Notificaciones: mostrar o no notificaciones al ser invitado a un evento
+  io.on('notEvent', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.notEvent = data.notEvent;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.notEvent = data.notEvent;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].notEvent = data.notEvent;
+      }
+    }
+
+  });
+
+  //Notificaciones: mostrar o no notificaciones al ser respondida una pregunta
+  io.on('notAnswer', function(data){
+    //user: uno mismo
+    if (data.id == user._id) {
+      user.notAnswer = data.notAnswer;
+    }
+    //currentuser: usuario que estoy viendo ahora
+    if('_id' in currentUser){
+      if (data.id == currentUser._id) {
+        currentUser.notAnswer = data.notAnswer;
+      }
+    }
+    //cacheduser: todos los demas
+    if(data.id in cachedUsers){
+      if (data.id == cachedUsers[data.id]._id) {
+        cachedUsers[data.id].notAnswer = data.notAnswer;
+      }
+    }
+
+  });
 }
 
 

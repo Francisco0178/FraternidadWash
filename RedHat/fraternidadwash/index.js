@@ -1283,8 +1283,7 @@ MongoClient.connect(mongoURL, function(err, db) {
     });
   });
 
-
-  //Parte de Jose de Notificaciones: mostrar o no sonidos al recibir publicacion
+  //Parte de Jose de Notificaciones: mostrar o no sonidos al recibir publicaciones
   socket.on('soundPubs', function (msg) {
     isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
       if(ans != false){
@@ -1292,6 +1291,71 @@ MongoClient.connect(mongoURL, function(err, db) {
        usersDB.update({_id:ObjectID(ans._id)},{$set:{soundPubs:msg.data.soundPubs}},function(err,data){
            io.sockets.emit('soundPubs', {id:ans._id, soundPubs:msg.data.soundPubs});
            console.log('cambio de sonidos en publicaciones');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Notificaciones: mostrar o no sonidos al recibir mensajes de chat
+  socket.on('soundMsg', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{soundMsg:msg.data.soundMsg}},function(err,data){
+           io.sockets.emit('soundMsg', {id:ans._id, soundMsg:msg.data.soundMsg});
+           console.log('cambio de sonidos en mensajes');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Notificaciones: enviar o no notificaciones al correo electronico
+  socket.on('notMail', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{notMail:msg.data.notMail}},function(err,data){
+           io.sockets.emit('notMail', {id:ans._id, notMail:msg.data.notMail});
+           console.log('cambio de uso de correo');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Notificaciones: mostrar o no notificaciones al ser etiquetado
+  socket.on('notLabel', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{notLabel:msg.data.notLabel}},function(err,data){
+           io.sockets.emit('notLabel', {id:ans._id, notLabel:msg.data.notLabel});
+           console.log('cambio de uso de correo');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Notificaciones: mostrar o no notificaciones al ser etiquetado
+  socket.on('notEvent', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{notEvent:msg.data.notEvent}},function(err,data){
+           io.sockets.emit('notEvent', {id:ans._id, notEvent:msg.data.notEvent});
+           console.log('cambio de notificacion de evento');
+       });
+      }
+    });
+  });
+
+  //Parte de Jose de Notificaciones: mostrar o no notificaciones al ser respondida una pregunta
+  socket.on('notAnswer', function (msg) {
+    isLogged({email:msg.email,pass:msg.pass},msg.data,function(ans){
+      if(ans != false){
+        //validar datos
+       usersDB.update({_id:ObjectID(ans._id)},{$set:{notAnswer:msg.data.notAnswer}},function(err,data){
+           io.sockets.emit('notAnswer', {id:ans._id, notAnswer:msg.data.notAnswer});
+           console.log('cambio de notificacion de pregunta respondida');
        });
       }
     });

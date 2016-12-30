@@ -198,6 +198,7 @@ a:hover{
   width: 600px;
   padding-bottom: 30px;
   display: none;
+  
 }
 
 .confListCuatro .whiteW{
@@ -219,19 +220,20 @@ a:hover{
   color:var(--celeste);
   padding:9px;
 }
+
 .confListCuatro .A{
   background:#FFF;
-
+  border-radius: 10px;
 }
 .confListCuatro .B{
   background:#FAFAFA;
-
 }
+
 .confListCuatro td{
     text-align: left;
     padding: 8px;
     width:120px;
-
+    
 }
 .confListCuatro td:nth-child(2){
     width:230px;
@@ -352,8 +354,6 @@ a:hover{
   background-color: white;
   position: absolute;
   display: none;
-  
-
 }
 
 #listalock div{
