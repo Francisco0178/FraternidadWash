@@ -432,6 +432,9 @@ MongoClient.connect(mongoURL, function(err, db) {
 
 
   //Registro Inicial
+  //UsersDB de Jose: blockedUsers, allowLabel, allowLabel, allowPass,allowName,allowCareer,
+  //showPhotos,showDocs,showPubs,showAnswers,showAds,soundPubs,soundMsg,notMail,notLabel,notEvent,notAnswer
+  
   app.post('/register', function (req, res) {
 
     if(!('email' in req.body && 'pass' in req.body && 'pass1' in req.body)){
