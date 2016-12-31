@@ -492,6 +492,7 @@ function showConfigurationsSection() {
           return;
       }
     }
+    //send("blockedUsers",{blockedUsers:user.blockedUsers.splice(user.blockedUsers.length, 0, ids)});
     send("blockedUsers",{blockedUsers:[ids]});
     alert(name+" bloqueado");
 
@@ -573,93 +574,4 @@ function passcod(pass) {
     html += "*";
   }
   $('#npass').html(html);
-}
-
-// Bloqueos Fraternos
-
-//1) Bloquear en general a los fraternos
-
-function block_fraterno() {
-    var conf = $("#general");
-    var _name = conf.find(".ffraterno");
-    _name.on("change",function() {
-      post(_name.val(),'/searchUsers',function(req) {
-        console.log(req);
-      });
-    });
-}
-
-//2) Bloquear a los fraternos para que inviten a uno para los eventos
-
-function block_invitacion() {
-    var conf = $("#invs");
-    var _name = conf.find(".finvitacion");
-    var _ap = conf.find(".linvitacion");
-    post({blockedInv:conf.find(".finvitacion").val() + ' ' + conf.find(".linvitacion").val()},'/updateUser',function(res) {
-      user.blockedInv=conf.find(".finvitacion").val() + ' ' + conf.find(".linvitacion").val();
-      alert("Fraterno: " + conf.find(".finvitacion").val() + ' ' + conf.find(".linvitacion").val() + " bloqueado para enviarme invitaciones");
-      $(".finvitacion").val('');
-      $(".linvitacion").val('');
-    });
-
-}
-
-//3) Bloquear a los fraternos para que no me etiqueten
-
-function block_label() {
-    var conf = $("#labels");
-    var _name = conf.find(".fetiquetar");
-    var _ap = conf.find(".letiquetar");
-    post({blockedLabel:conf.find(".fetiquetar").val() + ' ' + conf.find(".letiquetar").val()},'/updateUser',function(res) {
-      user.blockedLabel=conf.find(".fetiquetar").val() + ' ' + conf.find(".letiquetar").val();
-      alert("Fraterno: " + conf.find(".fetiquetar").val() + ' ' + conf.find(".letiquetar").val() + " bloqueado para etiquetarme");
-      $(".fetiquetar").val('');
-      $(".letiquetar").val('');
-    });
-
-}
-
-//4) Bloquear a los fraternos para que no me envien mensajes del chat
-
-function block_msg() {
-    var conf = $("#bmsg");
-    var _name = conf.find(".fmensajes");
-    var _ap = conf.find(".lmensajes");
-    post({blockedMsg:conf.find(".fmensajes").val() + ' ' + conf.find(".lmensajes").val()},'/updateUser',function(res) {
-      user.blockedMsg=conf.find(".fmensajes").val() + ' ' + conf.find(".lmensajes").val();
-      alert("Fraterno: " + conf.find(".fmensajes").val() + ' ' + conf.find(".lmensajes").val() + " bloqueado para enivarme mensajes");
-      $(".fmensajes").val('');
-      $(".lmensajes").val('');
-    });
-
-}
-
-//5) Bloquear a los fraternos para que no ver sus publicaciones
-
-function block_pub() {
-    var conf = $("#bpub");
-    var _name = conf.find(".fpublicacion");
-    var _ap = conf.find(".lpublicacion");
-    post({blockedPub:conf.find(".fpublicacion").val() + ' ' + conf.find(".lpublicacion").val()},'/updateUser',function(res) {
-      user.blockedPub=conf.find(".fpublicacion").val() + ' ' + conf.find(".lpublicacion").val();
-      alert("Fraterno: " + conf.find(".fpublicacion").val() + ' ' + conf.find(".lpublicacion").val() + " bloqueado para ver sus publicaciones");
-      $(".fpublicacion").val('');
-      $(".lpublicacion").val('');
-    });
-
-}
-
-//6) Bloquear a los fraternos para que no me lleguen las preguntas
-
-function block_preg() {
-    var conf = $("#bpreg");
-    var _name = conf.find(".fpregunta");
-    var _ap = conf.find(".lpregunta");
-    post({blockedPub:conf.find(".fpregunta").val() + ' ' + conf.find(".lpregunta").val()},'/updateUser',function(res) {
-      user.blockedPub=conf.find(".fpregunta").val() + ' ' + conf.find(".lpregunta").val();
-      alert("Fraterno: " + conf.find(".fpregunta").val() + ' ' + conf.find(".lpregunta").val() + " bloqueado para que me pregunten");
-      $(".fpregunta").val('');
-      $(".lpregunta").val('');
-    });
-
 }

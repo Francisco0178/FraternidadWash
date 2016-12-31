@@ -202,15 +202,14 @@ $(document).ready(function(){
 });
 
 function nuevo_ingreso() {
-  /*
-  post({yearIn:modal.find('.anioIn').val()},'/updateUser',function(res) {
-      user.city=modal.find('.anioIn').val();
-      $('#nyear').html(user.city);
-  });
-  */
-  send("yearInChange",{yearIn:modal.find('.anioIn').val()});
-  $('#nyear').html(modal.find('.anioIn').val());
-  modal.hide();
+  if(modal.find('.anioIn').val()<parseInt(user.birthdate.substring(0,4))+18){
+    alert("debe poner un ingreso 18 años mas de su fecha de nacimiento");
+  }else{
+      send("yearInChange",{yearIn:modal.find('.anioIn').val()});
+      $('#nyear').html(modal.find('.anioIn').val());
+      modal.hide();
+  }
+
 }
 
 
