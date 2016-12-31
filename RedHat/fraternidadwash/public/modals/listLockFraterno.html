@@ -234,7 +234,7 @@ function desblock_fraterno(id) {
   var bloqueado;
   for (var i = 0; i < user.blockedUsers.length; i++) {
     if (i == id) {
-        send("blockedUsers",{blockedUsers:[]});
+        send("blockedUsers",{blockedUsers:''});
         //user.blockedUsers.splice(i, 1);
     } 
   }

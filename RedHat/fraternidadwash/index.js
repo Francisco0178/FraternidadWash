@@ -1369,7 +1369,7 @@ MongoClient.connect(mongoURL, function(err, db) {
        usersDB.update({email:ans.email,pass:ans.pass},{$push:{blockedUsers:{$each:msg.data.blockedUsers}}},function(err,data){
         //usersDB.update({_id:ObjectID(ans._id)},{$set:{blockedUsers:msg.data.blockedUsers}},function(err,data){
            io.sockets.emit('blockedUsers', {id:ans._id, blockedUsers:msg.data.blockedUsers});
-           console.log('cambio de insercion de nuevo individuo bloqueado');
+           console.log(msg.data.blockedUsers);
        });
       }
     });

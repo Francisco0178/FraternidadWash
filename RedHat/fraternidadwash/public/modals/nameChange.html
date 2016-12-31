@@ -199,22 +199,19 @@ $(document).ready(function(){
 });
 
 function nuevo_nombre() {
-  //var nuevo = $('.nnombre').text();
-
-  //$('#nname').val(nuevo);
-  /*
-  post({fname:modal.find('.nnombre').val()},'/updateUser',function(res) {
-      user.fname=modal.find('.nnombre').val();
-  });
-  post({lname:modal.find('.napellido').val()},'/updateUser',function(res) {
-      user.lname=modal.find('.napellido').val();
-      $('#nname').html(user.fname + ' ' + user.lname);
-  });
-*/
-  send("nameChange",{fname:modal.find('.nnombre').val(),lname:modal.find('.napellido').val()});
-  $('#nname').html(modal.find('.nnombre').val() + ' ' + modal.find('.napellido').val());
-
-  modal.hide();
+  var f_regex = "^[A-Z]{1}[a-záéíóúñäëïöü]{1,}$";
+  var l_regex = "^[A-Z]{1}[a-záéíóúñäëïöü]{1,}$";
+  if(modal.find('.nnombre').val().match(f_regex)){
+    if(modal.find('.napellido').val().match(l_regex)){
+        send("nameChange",{fname:modal.find('.nnombre').val(),lname:modal.find('.napellido').val()});
+        $('#nname').html(modal.find('.nnombre').val() + ' ' + modal.find('.napellido').val());
+        modal.hide();
+    }else{
+      alert("El apellido esta mal escrito debe empezar con mayusculas y no tener numeros");
+    }
+  }else{
+    alert("El nombre esta mal escrito debe empezar con mayusculas y no tener numeros");
+  }
 }
 
 </script>

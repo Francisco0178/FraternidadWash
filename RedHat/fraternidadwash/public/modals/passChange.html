@@ -214,16 +214,17 @@ $(document).ready(function(){
 });
 
 function nuevo_pass() {
+  var pass_regex = "^[A-Za-zÑñ0-9]{1,}$";
+  //var pass_regex = "^[A-Z]{1}[a-z]{1,}[0-9]{1}$";
   if ($('.ncont').val() == $('.rcont').val()) {
-    /*
-    post({pass:modal.find('.ncont').val()},'/updateUser',function(res) {
-      user.pass=modal.find('.ncont').val();
-      codif(user.pass);
-    });
-    */
-    send("passChange",{pass:$('.ncont').val()});
-    codif($('.ncont').val());
-    modal.hide();
+    if($('.ncont').val().match(pass_regex)){
+      send("passChange",{pass:$('.ncont').val()});
+      codif($('.ncont').val());
+      modal.hide();
+    }else{
+      alert("La contraseña debe tener 1 o mas caracteres sin con al menos un numero");
+    }
+
   } else{
     alert('Deben coincidir ambas contraseñas');
   };
